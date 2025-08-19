@@ -1,0 +1,128 @@
+# TEKNOFEST 2025 Turkish Address Resolution System
+# Docker Compose Configuration for Integration Testing
+# 
+# This configuration provides a complete PostgreSQL + PostGIS database
+# environment for real integration testing with Turkish geographic data.
+
+version: '3.8'
+
+services:
+  # PostgreSQL 15 with PostGIS 3.3 for spatial operations
+  test-database:
+    image: postgis/postgis:15-3.3
+    container_name: teknofest-test-db
+    restart: unless-stopped
+    
+    environment:
+      # Database configuration
+      POSTGRES_DB: address_resolution_test
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+      
+      # PostGIS configuration
+      POSTGIS_VERSION: 3.3
+      
+      # Performance tuning for testing
+      POSTGRES_SHARED_PRELOAD_LIBRARIES: pg_stat_statements
+      
+    ports:
+      # Expose on localhost:5432 for tests
+      - "5432:5432"
+    
+    volumes:
+      # Persistent data storage
+      - postgres_test_data:/var/lib/postgresql/data
+      
+      # Initialization scripts
+      - ./database/init:/docker-entrypoint-initdb.d:ro
+      
+      # Configuration overrides
+      - ./database/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+      
+    networks:
+      - teknofest-test-network
+    
+    # Resource limits for testing
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 512M
+          cpus: '0.5'
+    
+    # Health check
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U test_user -d address_resolution_test"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # PgAdmin for database management (optional for debugging)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: teknofest-pgadmin
+    restart: unless-stopped
+    
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@teknofest.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      
+    ports:
+      - "8080:80"
+      
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      
+    networks:
+      - teknofest-test-network
+      
+    depends_on:
+      test-database:
+        condition: service_healthy
+    
+    profiles:
+      - debug  # Only start with --profile debug
+
+  # Redis for caching (optional for performance testing)
+  redis-cache:
+    image: redis:7-alpine
+    container_name: teknofest-redis
+    restart: unless-stopped
+    
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    
+    ports:
+      - "6379:6379"
+      
+    volumes:
+      - redis_data:/data
+      
+    networks:
+      - teknofest-test-network
+    
+    profiles:
+      - cache  # Only start with --profile cache
+
+volumes:
+  # Persistent PostgreSQL data
+  postgres_test_data:
+    driver: local
+    
+  # PgAdmin data
+  pgadmin_data:
+    driver: local
+    
+  # Redis data
+  redis_data:
+    driver: local
+
+networks:
+  teknofest-test-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
