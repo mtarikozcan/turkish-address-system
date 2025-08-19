@@ -168,7 +168,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Developed for TEKNOFEST 2025 AI Competition
 - Uses OpenStreetMap data for geographic validation
 - Built with FastAPI, PostgreSQL, and scikit-learn
 
