@@ -1,10 +1,10 @@
-# 🗺️ OpenStreetMap Turkey Dataset Integration Guide
+# 🗺 OpenStreetMap Turkey Dataset Integration Guide
 
 ## Phase 3.5: System Optimization & Turkey Dataset Integration
 
 This guide details the integration of OpenStreetMap Turkey dataset to expand from 355 to 50,000+ Turkish locations with street-level parsing capability.
 
-## 📋 Prerequisites
+##  Prerequisites
 
 ### Required Python Packages
 ```bash
@@ -18,7 +18,7 @@ pip install geopandas fiona shapely pandas
    - Size: ~500MB compressed, ~2GB extracted
    - Content: Complete Turkey geographic data
 
-## 🚀 Integration Process
+##  Integration Process
 
 ### Step 1: OSM Data Exploration
 ```bash
@@ -49,7 +49,7 @@ The enhanced CSV will be automatically loaded by the existing components:
 - `AddressValidator` will validate against expanded hierarchy
 - `AddressCorrector` will have more reference data for fuzzy matching
 
-## 📊 Expected Data Structure
+##  Expected Data Structure
 
 ### OSM Shapefile Layers (Typical)
 ```
@@ -69,7 +69,7 @@ il_kodu,il_adi,ilce_kodu,ilce_adi,mahalle_kodu,mahalle_adi,source,osm_place_type
 34,İstanbul,1,Kadıköy,34002,Mecidiyeköy,OSM,neighbourhood,9
 ```
 
-## 🎯 Target Enhancements
+##  Target Enhancements
 
 ### 1. Neighborhood Coverage
 - **Current:** 355 administrative records
@@ -93,7 +93,7 @@ il_kodu,il_adi,ilce_kodu,ilce_adi,mahalle_kodu,mahalle_adi,source,osm_place_type
 - Validate address components are geographically consistent
 - Enable distance-based address matching
 
-## 🔧 Technical Implementation
+##  Technical Implementation
 
 ### OSM Data Processing Pipeline
 ```python
@@ -125,7 +125,7 @@ result = parser.parse_address(address)
 # Extracts: sokak="Tunalı Hilmi Caddesi", bina_no="25"
 ```
 
-## 📈 Expected Performance Improvements
+##  Expected Performance Improvements
 
 ### Parsing Success Rate
 - **Current:** 20-46% (depending on address type)
@@ -135,10 +135,10 @@ result = parser.parse_address(address)
 ### Coverage Expansion
 | Component | Before | After | Improvement |
 |-----------|--------|--------|-------------|
-| Provinces | 81 | 81 | ✅ Complete |
+| Provinces | 81 | 81 |  Complete |
 | Districts | ~300 | ~900 | +3x coverage |
 | Neighborhoods | 355 | 50,000+ | +140x coverage |
-| Streets | 0 | 100,000+ | ✅ New capability |
+| Streets | 0 | 100,000+ |  New capability |
 
 ## 🧪 Testing Strategy
 
@@ -186,14 +186,14 @@ test_cases = [
 **Challenge:** OSM uses WGS84, need to handle projections
 **Solution:** GeoPandas automatic CRS handling
 
-## 📚 References
+##  References
 
 - [OpenStreetMap Turkey](https://www.openstreetmap.org/relation/174737)
 - [Geofabrik Downloads](https://download.geofabrik.de/europe/turkey.html)
 - [OSM Administrative Levels](https://wiki.openstreetmap.org/wiki/Key:admin_level)
 - [Turkish Place Names](https://wiki.openstreetmap.org/wiki/Turkey)
 
-## ✅ Success Criteria
+##  Success Criteria
 
 ### Phase 3.5 Complete When:
 - [ ] OSM dataset successfully processed and analyzed  
@@ -204,4 +204,4 @@ test_cases = [
 - [ ] Performance remains <500ms per address
 - [ ] Geographic validation integrated
 
-**🎯 Target Delivery:** Complete Turkey address processing system with unmatched coverage and accuracy.
+** Target Delivery:** Complete Turkey address processing system with unmatched coverage and accuracy.

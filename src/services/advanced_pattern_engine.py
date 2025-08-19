@@ -1,5 +1,5 @@
 """
-TEKNOFEST 2025 - Advanced Pattern Recognition Engine
+Advanced Pattern Recognition Engine
 Phase 3: Comprehensive Turkish Address Pattern Handling
 
 This module provides advanced pattern recognition for:
@@ -17,7 +17,7 @@ from pathlib import Path
 
 class AdvancedPatternEngine:
     """
-    TEKNOFEST Advanced Pattern Engine
+    Advanced Pattern Engine
     
     Handles comprehensive Turkish address patterns including:
     - Building hierarchy: site, apartman, blok, kat
@@ -802,7 +802,7 @@ def test_advanced_pattern_engine():
     
     # Display statistics
     stats = advanced_engine.get_statistics()
-    print(f"\n📊 Performance Statistics:")
+    print(f"\nPerformance Statistics:")
     print(f"   Total queries: {stats['total_queries']}")
     print(f"   Successful extractions: {stats['successful_extractions']}")
     print(f"   Success rate: {stats['success_rate']:.1%}")
@@ -816,7 +816,7 @@ def test_advanced_pattern_engine():
     success_rate = (passed_tests / total_tests * 100) if total_tests > 0 else 0
     
     print(f"\n" + "=" * 70)
-    print(f"📊 PHASE 3 TEST SUMMARY:")
+    print(f"PHASE 3 TEST SUMMARY:")
     print(f"   Total tests: {total_tests}")
     print(f"   Passed: {passed_tests}")
     print(f"   Failed: {failed_tests}")

@@ -1,5 +1,5 @@
 """
-TEKNOFEST 2025 - Semantic Pattern Engine
+Semantic Pattern Engine
 Phase 2: Position-Independent Semantic Component Recognition
 
 This module provides intelligent semantic pattern recognition for:
@@ -22,7 +22,7 @@ from pathlib import Path
 
 class SemanticPatternEngine:
     """
-    TEKNOFEST Semantic Pattern Engine
+    Semantic Pattern Engine
     
     Handles position-independent semantic pattern recognition for Turkish addresses:
     - Street patterns: "231.sk", "15 sk.", "atatürk sokak"
@@ -515,7 +515,7 @@ def test_semantic_pattern_engine():
     
     # Display statistics
     stats = semantic_engine.get_statistics()
-    print(f"\n📊 Performance Statistics:")
+    print(f"\nPerformance Statistics:")
     print(f"   Total queries: {stats['total_queries']}")
     print(f"   Successful extractions: {stats['successful_extractions']}")
     print(f"   Success rate: {stats['success_rate']:.1%}")
@@ -528,7 +528,7 @@ def test_semantic_pattern_engine():
     success_rate = (passed_tests / total_tests * 100) if total_tests > 0 else 0
     
     print(f"\n" + "=" * 60)
-    print(f"📊 PHASE 2 TEST SUMMARY:")
+    print(f"PHASE 2 TEST SUMMARY:")
     print(f"   Total tests: {total_tests}")
     print(f"   Passed: {passed_tests}")
     print(f"   Failed: {failed_tests}")

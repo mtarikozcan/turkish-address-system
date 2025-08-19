@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-TEKNOFEST 2025 - Detailed Manual Address Testing Interface
+Address Resolution System - Detailed Manual Address Testing Interface
 Interactive testing interface for comprehensive address pipeline analysis
 
 This tool provides detailed step-by-step analysis of address processing
 for manual jury evaluation and system debugging.
 
-Author: TEKNOFEST 2025 Address Resolution Team
+Author: Address Resolution System Address Resolution Team
 Version: 1.0.0
 """
 
@@ -133,7 +133,7 @@ class DetailedManualTester:
     
     def __init__(self):
         """Initialize the detailed manual testing interface"""
-        print(f"{Colors.HEADER}🔬 TEKNOFEST 2025 - DETAILED MANUAL ADDRESS TESTER{Colors.ENDC}")
+        print(f"{Colors.HEADER}🔬 Address Resolution System - DETAILED MANUAL ADDRESS TESTER{Colors.ENDC}")
         print("=" * 80)
         print("Interactive interface for comprehensive address pipeline analysis")
         print()

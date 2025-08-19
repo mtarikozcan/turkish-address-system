@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-TEKNOFEST 2025 - Comprehensive Manual Jury Testing Framework
+Address Resolution System - Comprehensive Manual Jury Testing Framework
 Interactive test framework for comprehensive address system validation
 
 This framework tests the system with challenging real-world scenarios
-that juries might use to evaluate TEKNOFEST competition submissions.
+that juries might use to evaluate Address Resolution System competition submissions.
 
-Author: TEKNOFEST 2025 Address Resolution Team
+Author: Address Resolution System Address Resolution Team
 Version: 1.0.0
 """
 
@@ -50,7 +50,7 @@ class TestBatchResult:
 
 class ManualJuryTestFramework:
     """
-    Comprehensive manual testing framework for TEKNOFEST 2025 jury evaluation.
+    Comprehensive manual testing framework for Address Resolution System jury evaluation.
     
     Tests 5 challenging batches:
     1. Turkish Character Hell - Character normalization stress test
@@ -62,7 +62,7 @@ class ManualJuryTestFramework:
     
     def __init__(self):
         """Initialize the testing framework with all components"""
-        print("🚀 INITIALIZING TEKNOFEST 2025 MANUAL JURY TEST FRAMEWORK")
+        print("🚀 INITIALIZING Address Resolution System MANUAL JURY TEST FRAMEWORK")
         print("=" * 80)
         
         # Initialize system components
@@ -80,7 +80,7 @@ class ManualJuryTestFramework:
         
         # Test criteria and scoring weights
         self.scoring_weights = {
-            'duplicate_detection': 0.30,  # 30% - Critical for TEKNOFEST
+            'duplicate_detection': 0.30,  # 30% - Critical for Address Resolution System
             'geocoding_accuracy': 0.25,   # 25% - Geographic precision
             'processing_speed': 0.20,     # 20% - Performance requirement
             'error_handling': 0.15,       # 15% - System robustness
@@ -89,7 +89,7 @@ class ManualJuryTestFramework:
         
         # Pass/fail criteria
         self.pass_criteria = {
-            'min_duplicate_detection_rate': 0.15,  # TEKNOFEST minimum 15%
+            'min_duplicate_detection_rate': 0.15,  # Address Resolution System minimum 15%
             'max_processing_time_ms': 100,         # <100ms requirement
             'min_geocoding_success_rate': 0.70,    # 70% geocoding success
             'max_error_rate': 0.10,                # <10% error rate
@@ -165,7 +165,7 @@ class ManualJuryTestFramework:
         print("\n🔥 STARTING COMPREHENSIVE JURY TESTING")
         print("=" * 80)
         print("Testing system against 5 challenging batches designed to stress-test")
-        print("all aspects of the TEKNOFEST 2025 address resolution requirements...")
+        print("all aspects of the Address Resolution System address resolution requirements...")
         
         overall_start_time = time.time()
         
@@ -394,13 +394,13 @@ class ManualJuryTestFramework:
             'criteria_results': criteria_results,
             'overall_pass': overall_pass,
             'batches_passed': sum(1 for r in self.batch_results if r.overall_score >= 0.70),
-            'recommendation': 'READY FOR TEKNOFEST COMPETITION' if overall_pass else 'NEEDS IMPROVEMENT BEFORE COMPETITION'
+            'recommendation': 'READY FOR Address Resolution System COMPETITION' if overall_pass else 'NEEDS IMPROVEMENT BEFORE COMPETITION'
         }
     
     def _generate_jury_report(self):
         """Generate comprehensive jury evaluation report"""
         print("\n" + "=" * 80)
-        print("🏆 TEKNOFEST 2025 JURY EVALUATION REPORT")
+        print("🏆 Address Resolution System JURY EVALUATION REPORT")
         print("=" * 80)
         
         print(f"\n📋 EXECUTIVE SUMMARY")
@@ -418,7 +418,7 @@ class ManualJuryTestFramework:
         print(f"Average processing time: {self.overall_results['overall_avg_processing_time_ms']:.2f}ms")
         print(f"Overall error rate: {self.overall_results['overall_error_rate']:.1%}")
         
-        print(f"\n🎯 TEKNOFEST COMPLIANCE CHECK")
+        print(f"\n🎯 Address Resolution System COMPLIANCE CHECK")
         print("-" * 40)
         criteria = self.overall_results['criteria_results']
         print(f"{'✅' if criteria['duplicate_detection_pass'] else '❌'} Duplicate detection rate ≥ 15%: {self.overall_results['avg_duplicate_detection_rate']:.1%}")
@@ -443,7 +443,7 @@ class ManualJuryTestFramework:
         
         if overall_pass:
             print(f"\n🎉 CONGRATULATIONS!")
-            print("Your system meets TEKNOFEST 2025 competition requirements.")
+            print("Your system meets Address Resolution System competition requirements.")
             print("The system demonstrates robust Turkish address handling,")
             print("effective duplicate detection, and reliable geocoding.")
         else:
@@ -476,7 +476,7 @@ class ManualJuryTestFramework:
         
         detailed_results = {
             'test_framework_info': {
-                'framework_name': 'TEKNOFEST 2025 Manual Jury Testing Framework',
+                'framework_name': 'Address Resolution System Manual Jury Testing Framework',
                 'version': '1.0.0',
                 'test_timestamp': datetime.now().isoformat(),
                 'pass_criteria': self.pass_criteria,
@@ -558,7 +558,7 @@ class ManualJuryTestFramework:
 
 def main():
     """Main function to run the comprehensive jury testing framework"""
-    print("🚀 TEKNOFEST 2025 - MANUAL JURY TESTING FRAMEWORK")
+    print("🚀 Address Resolution System - MANUAL JURY TESTING FRAMEWORK")
     print("=" * 80)
     print("This framework tests your address resolution system against")
     print("challenging real-world scenarios that juries use for evaluation.")
@@ -581,7 +581,7 @@ def main():
             choice = input(f"\nSelect mode (0-3): ").strip()
             
             if choice == '0':
-                print("👋 Exiting TEKNOFEST jury testing framework")
+                print("👋 Exiting Address Resolution System jury testing framework")
                 break
             elif choice == '1':
                 print("🚀 Starting automatic comprehensive testing...")

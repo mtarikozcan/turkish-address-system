@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TEKNOFEST KAGGLE YARIŞMA SİMÜLATÖRÜ
+Address Resolution System KAGGLE YARIŞMA SİMÜLATÖRÜ
 Gerçek Kaggle yarışma deneyimini simüle eden scoring sistemi
 """
 
@@ -16,14 +16,14 @@ def accuracy_score(y_true, y_pred):
     return np.mean(y_true == y_pred)
 
 class TeknoFestKaggleSimulator:
-    """TEKNOFEST Adres Çözümleme Yarışması Kaggle Simülatörü"""
+    """Address Resolution System Adres Çözümleme Yarışması Kaggle Simülatörü"""
     
     def __init__(self, data_dir: str = "/Users/tarikozcan/Desktop/adres_hackhaton/kaggle_data"):
         """Simülatörü başlat"""
         self.data_dir = data_dir
         self.load_data()
         self.setup_evaluation_splits()
-        print("🏁 TEKNOFEST KAGGLE YARIŞMA SİMÜLATÖRÜ BAŞLATILDI")
+        print("🏁 Address Resolution System KAGGLE YARIŞMA SİMÜLATÖRÜ BAŞLATILDI")
         print("=" * 60)
         print(f"📊 Train Seti: {len(self.train_df):,} örnek")
         print(f"📊 Test Seti: {len(self.test_df):,} örnek")
@@ -273,7 +273,7 @@ class TeknoFestKaggleSimulator:
 
 def main():
     """Simülatör demo"""
-    print("🎮 TEKNOFEST KAGGLE SİMÜLATÖR DEMOsu")
+    print("🎮 Address Resolution System KAGGLE SİMÜLATÖR DEMOsu")
     print("=" * 60)
     
     # Simülatörü başlat

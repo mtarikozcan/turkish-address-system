@@ -1,8 +1,8 @@
 """
-TEKNOFEST 2025 - Kaggle Submission Formatter
+Competition Submission Formatter
 Competition Submission System
 
-TEKNOFEST REQUIREMENT: Format processed addresses for Kaggle private leaderboard
+REQUIREMENT: Format processed addresses for competition leaderboard
 """
 
 import pandas as pd
@@ -27,17 +27,17 @@ except ImportError:
 
 class KaggleSubmissionFormatter:
     """
-    TEKNOFEST Kaggle Submission Formatter
+    Competition Submission Formatter
     
-    Formats processed address data into TEKNOFEST competition submission format
+    Formats processed address data into competition submission format
     for Kaggle private leaderboard evaluation
     """
     
     def __init__(self):
-        """Initialize formatter with TEKNOFEST schema requirements"""
+        """Initialize formatter with schema requirements"""
         self.logger = logging.getLogger(__name__)
         
-        # TEKNOFEST required columns for submission
+        # Required columns for submission
         self.required_columns = self.get_teknofest_schema()
         
         # Initialize components if available
@@ -54,7 +54,7 @@ class KaggleSubmissionFormatter:
     
     def get_teknofest_schema(self) -> Dict[str, str]:
         """
-        Define TEKNOFEST competition submission schema
+        Define competition submission schema
         
         Returns:
             Dictionary with required columns and their data types
@@ -76,20 +76,20 @@ class KaggleSubmissionFormatter:
     
     def format_for_teknofest_submission(self, processed_addresses: List[Dict[str, Any]]) -> pd.DataFrame:
         """
-        TEKNOFEST REQUIREMENT: Format for Kaggle private leaderboard
+        REQUIREMENT: Format for competition leaderboard
         
         Args:
             processed_addresses: Output from GeoIntegratedPipeline or similar processing
             
         Returns:
-            pandas.DataFrame with TEKNOFEST required columns:
+            pandas.DataFrame with required columns:
             - id, il, ilce, mahalle, cadde, sokak, bina_no, daire_no, confidence
         """
         if not processed_addresses:
             self.logger.warning("No processed addresses provided for formatting")
             return self._create_empty_submission()
         
-        self.logger.info(f"Formatting {len(processed_addresses)} addresses for TEKNOFEST submission")
+        self.logger.info(f"Formatting {len(processed_addresses)} addresses for submission")
         
         # Convert to standardized format
         submission_data = []
@@ -234,7 +234,7 @@ class KaggleSubmissionFormatter:
             return 0.5  # Default moderate confidence
     
     def _standardize_province(self, province: str) -> str:
-        """Standardize province names according to TEKNOFEST requirements"""
+        """Standardize province names according to requirements"""
         if not province or pd.isna(province):
             return ''
         
@@ -396,7 +396,7 @@ class KaggleSubmissionFormatter:
     
     def validate_submission_format(self, df: pd.DataFrame) -> Dict[str, Any]:
         """
-        Validate submission meets all TEKNOFEST requirements
+        Validate submission meets all requirements
         
         Returns:
             {
@@ -549,10 +549,10 @@ class KaggleSubmissionFormatter:
             raise
 
 
-# Test function for TEKNOFEST validation
+# Test function for validation
 def test_kaggle_formatter():
     """Test Kaggle submission formatter"""
-    print("📊 TESTING KAGGLE SUBMISSION FORMATTER")
+    print("TESTING SUBMISSION FORMATTER")
     print("=" * 50)
     
     formatter = KaggleSubmissionFormatter()

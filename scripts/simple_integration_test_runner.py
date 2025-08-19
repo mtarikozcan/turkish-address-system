@@ -172,7 +172,7 @@ def test_system_components():
 
 def main():
     """Main test execution"""
-    print("🧪 TEKNOFEST 2025 - Integration Test Framework Validation")
+    print("🧪 Address Resolution System - Integration Test Framework Validation")
     print("=" * 70)
     
     # Test integration framework

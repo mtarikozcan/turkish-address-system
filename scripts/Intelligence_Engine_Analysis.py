@@ -338,7 +338,7 @@ class IntelligenceEngineAnalyzer:
         report = f"""
 # INTELLIGENCE ENGINE ANALYSIS REPORT
 **Generated:** {pd.Timestamp.now()}
-**System:** TEKNOFEST Turkish Address Processing System
+**System:** Address Resolution System Turkish Address Processing System
 
 ## 🎯 EXECUTIVE SUMMARY
 
@@ -421,7 +421,7 @@ class IntelligenceEngineAnalyzer:
         report += f"""
 ## 🏆 COMPETITIVE EDGE ANALYSIS
 
-**Advantages for TEKNOFEST:**
+**Advantages for Address Resolution System:**
 """
         for factor in edge_factors:
             report += f"{factor}\n"

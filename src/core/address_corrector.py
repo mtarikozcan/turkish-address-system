@@ -1,8 +1,8 @@
 """
-TEKNOFEST 2025 Adres Çözümleme Sistemi - Address Corrector Algorithm
+Address Resolution System - Address Corrector Algorithm
 
 Algorithm 2: Address Corrector
-Türkçe adreslerin yazım hatalarını düzeltme ve normalleştirme algoritması
+Turkish address spelling error correction and normalization algorithm
 
 Purpose: Correct Turkish address spelling errors, expand abbreviations,
 and normalize text for improved parsing and validation accuracy.
@@ -43,7 +43,7 @@ class AddressCorrector:
     Turkish Address Corrector Algorithm
     
     Corrects spelling errors, expands abbreviations, and normalizes
-    Turkish address text according to TEKNOFEST specifications.
+    Turkish address text according to system specifications.
     """
     
     def __init__(self):

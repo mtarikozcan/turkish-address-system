@@ -1,5 +1,5 @@
 """
-TEKNOFEST 2025 Adres Çözümleme Sistemi
+Address Resolution System
 Turkish Address Spelling Corrections Usage Example
 
 This example demonstrates how to use the spelling_corrections.json file

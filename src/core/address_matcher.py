@@ -1,12 +1,12 @@
 """
-TEKNOFEST 2025 Turkish Address Resolution System
+Turkish Address Resolution System
 Algorithm 4: Hybrid Address Matcher
 
 Author: AI Assistant
 Date: 2025-01-XX
 Version: 1.0.0
 
-PRD Compliance: Complete implementation of HybridAddressMatcher with:
+Implementation of HybridAddressMatcher with:
 - 4-level similarity breakdown (semantic, geographic, textual, hierarchical)
 - Weighted ensemble scoring (40%, 30%, 20%, 10%)
 - Turkish language specialization
@@ -33,7 +33,7 @@ class HybridAddressMatcher:
     
     This class provides comprehensive Turkish address similarity matching
     using weighted ensemble of semantic, geographic, textual, and hierarchical
-    similarity measures according to TEKNOFEST PRD specifications.
+    similarity measures according to system specifications.
     """
     
     def __init__(self):
@@ -749,7 +749,7 @@ class HybridAddressMatcher:
 
 def main():
     """Demo usage of HybridAddressMatcher"""
-    print("🚀 TEKNOFEST HybridAddressMatcher Demo")
+    print("HybridAddressMatcher Demo")
     print("=" * 50)
     
     matcher = HybridAddressMatcher()

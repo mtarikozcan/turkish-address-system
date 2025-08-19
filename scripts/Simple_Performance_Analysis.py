@@ -160,9 +160,9 @@ class SimplePerformanceAnalyzer:
                 
                 print(f"   ⏱️ Average: {avg_time:.2f}ms ({min_time:.2f}-{max_time:.2f}ms)")
                 
-                # TEKNOFEST compliance check
+                # Address Resolution System compliance check
                 teknofest_ok = avg_time < 100
-                print(f"   🎯 TEKNOFEST: {'✅ PASS' if teknofest_ok else '❌ FAIL'} (<100ms)")
+                print(f"   🎯 Address Resolution System: {'✅ PASS' if teknofest_ok else '❌ FAIL'} (<100ms)")
         
         # Overall pipeline analysis
         overall_analysis = {
@@ -179,7 +179,7 @@ class SimplePerformanceAnalyzer:
         print(f"\n📊 OVERALL PIPELINE PERFORMANCE:")
         print(f"   Average: {overall_analysis['average_pipeline_ms']:.2f}ms")
         print(f"   Success rate: {overall_analysis['success_rate']:.1%}")
-        print(f"   TEKNOFEST compliant: {'✅ YES' if overall_analysis['teknofest_compliant'] else '❌ NO'}")
+        print(f"   Address Resolution System compliant: {'✅ YES' if overall_analysis['teknofest_compliant'] else '❌ NO'}")
         
         return overall_analysis
     
@@ -268,14 +268,14 @@ class SimplePerformanceAnalyzer:
         # Generate summary report
         report = f"""
 # SIMPLE PERFORMANCE ANALYSIS REPORT
-**System:** TEKNOFEST Turkish Address Processing System
+**System:** Address Resolution System Turkish Address Processing System
 **Test Date:** {time.strftime('%Y-%m-%d %H:%M:%S')}
 
 ## 🎯 EXECUTIVE SUMMARY
 
 ### Key Performance Metrics
 - **Pipeline Average:** {pipeline_perf['average_pipeline_ms']:.2f}ms per address
-- **TEKNOFEST Compliance:** {'✅ PASS' if pipeline_perf['teknofest_compliant'] else '❌ FAIL'} (<100ms requirement)
+- **Address Resolution System Compliance:** {'✅ PASS' if pipeline_perf['teknofest_compliant'] else '❌ FAIL'} (<100ms requirement)
 - **Batch Throughput:** {batch_perf['throughput_per_sec']:.1f} addresses/second
 - **System Reliability:** {pipeline_perf['success_rate']:.1%} success rate
 
@@ -336,7 +336,7 @@ class SimplePerformanceAnalyzer:
 - **Success rate:** {batch_perf['success_rate']:.1%}
 - **Error rate:** {batch_perf['error_rate']:.1%}
 
-## 🏆 TEKNOFEST COMPETITION READINESS
+## 🏆 Address Resolution System COMPETITION READINESS
 
 ### Requirements Check
 - **Speed requirement (<100ms):** {'✅ PASS' if pipeline_perf['teknofest_compliant'] else '❌ FAIL'} ({pipeline_perf['average_pipeline_ms']:.2f}ms average)
@@ -370,7 +370,7 @@ class SimplePerformanceAnalyzer:
         report += f"1. **Optimize {slowest_component}** (slowest component: {component_perf[slowest_component]['average_ms']:.2f}ms avg)\n"
         
         if not pipeline_perf['teknofest_compliant']:
-            report += "2. **Critical: Reduce pipeline time below 100ms for TEKNOFEST compliance**\n"
+            report += "2. **Critical: Reduce pipeline time below 100ms for Address Resolution System compliance**\n"
         
         if pipeline_perf['success_rate'] < 0.95:
             report += f"3. **Improve reliability** (current: {pipeline_perf['success_rate']:.1%}, target: >95%)\n"

@@ -9,7 +9,7 @@ Transforms basic city-center geocoding into intelligent precision mapping:
 - Level 3: Neighborhood centroid (mahalle-level precision) 
 - Level 4: Street-level precision (sokak/cadde coordinates)
 
-TEKNOFEST Demo Impact:
+Demo Impact:
 - "İstanbul Kadıköy" → Kadıköy district center (not İstanbul center)
 - "Kadıköy Moda" → Moda neighborhood center
 - "Moda Bağdat Cd." → Street-level coordinates
@@ -762,7 +762,7 @@ def test_advanced_geocoding_engine():
         
         # Show capabilities
         stats = geocoding_engine.get_precision_statistics()
-        print(f"📊 Geocoding Capabilities:")
+        print(f"Geocoding Capabilities:")
         print(f"   Precision levels: {stats['precision_levels']}")
         print(f"   Street coordinates: {stats['street_coordinates']}")
         print(f"   Neighborhood coordinates: {stats['neighborhood_coordinates']}")
@@ -880,12 +880,12 @@ def test_advanced_geocoding_engine():
     total_tests = len(test_cases)
     success_rate = (successful_geocodings / total_tests) * 100
     
-    print(f"\n📊 PHASE 6 GEOCODING PERFORMANCE:")
+    print(f"\nPHASE 6 GEOCODING PERFORMANCE:")
     print(f"   Total tests: {total_tests}")
     print(f"   Successful geocodings: {successful_geocodings}")
     print(f"   Success rate: {success_rate:.1f}%")
     
-    print(f"\n🎯 PRECISION LEVELS ACHIEVED:")
+    print(f"\nPRECISION LEVELS ACHIEVED:")
     for level in ['street', 'neighborhood', 'district', 'province']:
         count = precision_achieved[level]
         percentage = (count / total_tests) * 100 if total_tests > 0 else 0
@@ -911,7 +911,7 @@ def test_advanced_geocoding_engine():
         print(f"✅ Multi-level precision hierarchy working")
         print(f"✅ Turkish geographic database comprehensive")
         print(f"✅ Intelligent precision selection functional")
-        print(f"🗺️  TEKNOFEST Demo Ready: Precise location mapping!")
+        print(f"Demo Ready: Precise location mapping!")
         return True
     else:
         print(f"\n🔧 PHASE 6 ADVANCED GEOCODING: NEEDS IMPROVEMENT")

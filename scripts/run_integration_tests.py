@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TEKNOFEST 2025 Turkish Address Resolution System
+Address Resolution System Turkish Address Resolution System
 Real Database Integration Test Runner
 
 This script provides a simple way to run the comprehensive integration tests
@@ -29,7 +29,7 @@ Examples:
   # Verbose mode with cleanup
   python run_integration_tests.py --docker --verbose --cleanup
 
-Author: TEKNOFEST 2025 Address Resolution Team
+Author: Address Resolution System Address Resolution Team
 Version: 1.0.0
 """
 
@@ -64,7 +64,7 @@ class IntegrationTestRunner:
     def parse_arguments(self):
         """Parse command line arguments"""
         parser = argparse.ArgumentParser(
-            description='TEKNOFEST 2025 Real Database Integration Test Runner',
+            description='Address Resolution System Real Database Integration Test Runner',
             formatter_class=argparse.RawDescriptionHelpFormatter,
             epilog="""
 Examples:
@@ -307,7 +307,7 @@ Examples:
     
     async def run_tests(self, args):
         """Main test execution function"""
-        print("🧪 TEKNOFEST 2025 - Real Database Integration Test Runner")
+        print("🧪 Address Resolution System - Real Database Integration Test Runner")
         print("=" * 70)
         
         # Setup logging

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TEKNOFEST 2025 Turkish Address System - Turkish Text Utilities
+Turkish Address System - Turkish Text Utilities
 
 Centralized Turkish character normalization and text processing utilities
 for consistent handling across all system components.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-TEKNOFEST 2025 - Comprehensive Feature Test
-Manual verification of all TEKNOFEST compliance features
+Address Resolution System - Comprehensive Feature Test
+Manual verification of all Address Resolution System compliance features
 
 Similar to interactive_test.py but focused on new features:
 1. Duplicate Detection System
@@ -283,9 +283,9 @@ def test_kaggle_formatter():
         formatter = KaggleSubmissionFormatter()
         print_result(True, "KaggleSubmissionFormatter initialized successfully")
         
-        print_subheader("Testing TEKNOFEST schema")
+        print_subheader("Testing Address Resolution System schema")
         schema = formatter.get_teknofest_schema()
-        print("TEKNOFEST required columns:")
+        print("Address Resolution System required columns:")
         for column, dtype in schema.items():
             print(f"   {column}: {dtype}")
         
@@ -293,7 +293,7 @@ def test_kaggle_formatter():
                           'bina_no', 'daire_no', 'confidence', 'latitude', 'longitude'}
         schema_columns = set(schema.keys())
         schema_complete = expected_columns.issubset(schema_columns)
-        print_result(schema_complete, "TEKNOFEST schema includes all required columns")
+        print_result(schema_complete, "Address Resolution System schema includes all required columns")
         
         print_subheader("Testing submission formatting")
         
@@ -623,9 +623,9 @@ def test_performance_claims():
 
 def main():
     """Main test execution"""
-    print("🎯 TEKNOFEST 2025 - COMPREHENSIVE FEATURE VERIFICATION")
+    print("🎯 Address Resolution System - COMPREHENSIVE FEATURE VERIFICATION")
     print("=" * 80)
-    print("Testing all new TEKNOFEST compliance features...")
+    print("Testing all new Address Resolution System compliance features...")
     print(f"Test data: {len(SAMPLE_ADDRESSES)} sample addresses")
     print(f"Started: {time.strftime('%Y-%m-%d %H:%M:%S')}")
     
@@ -672,7 +672,7 @@ def main():
     
     if success_rate == 100:
         print("\n🎉 ALL TESTS PASSED!")
-        print("✅ TEKNOFEST 2025 compliance features are working correctly")
+        print("✅ Address Resolution System compliance features are working correctly")
         print("🚀 System ready for competition!")
     elif success_rate >= 80:
         print("\n⚠️  Most tests passed, minor issues detected")

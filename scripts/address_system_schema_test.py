@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TEKNOFEST Address Schema Test - Comprehensive Enhancement Testing
+Address Resolution System Address Schema Test - Comprehensive Enhancement Testing
 """
 
 import sys
@@ -13,14 +13,14 @@ sys.path.append(str(Path(__file__).parent / "src"))
 from address_parser import AddressParser
 
 def test_teknofest_schema():
-    """Test TEKNOFEST comprehensive address schema requirements"""
+    """Test Address Resolution System comprehensive address schema requirements"""
     
-    print("🏆 TEKNOFEST COMPREHENSIVE ADDRESS SCHEMA TEST")
+    print("🏆 Address Resolution System COMPREHENSIVE ADDRESS SCHEMA TEST")
     print("=" * 70)
     
     parser = AddressParser()
     
-    # TEKNOFEST competition test cases
+    # Address Resolution System competition test cases
     competition_cases = [
         {
             "name": "STREET TYPE CLASSIFICATION",
@@ -97,14 +97,14 @@ def test_teknofest_schema():
             issues = missing_fields + incorrect_fields
             print(f"   ❌ NEEDS ENHANCEMENT: {', '.join(issues)}")
         else:
-            print(f"   ✅ TEKNOFEST COMPLIANT")
+            print(f"   ✅ Address Resolution System COMPLIANT")
         
         print("-" * 50)
     
     # Schema analysis
     print(f"\n📋 CURRENT SCHEMA ANALYSIS:")
     print(f"   Current fields: il, ilce, mahalle, sokak, bina_no")
-    print(f"   TEKNOFEST Required: il, ilce, mahalle, cadde, sokak, bina_no, daire_no, blok, kat, site")
+    print(f"   Address Resolution System Required: il, ilce, mahalle, cadde, sokak, bina_no, daire_no, blok, kat, site")
     print(f"   Missing fields: cadde, daire_no, blok, kat, site")
     print(f"   Required: Street type classification, OSM inference, enhanced building parsing")
 

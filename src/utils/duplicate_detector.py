@@ -1,8 +1,8 @@
 """
-TEKNOFEST 2025 - Duplicate Address Detection System
+Duplicate Address Detection System
 Algorithm 5: Duplicate Address Detector
 
-TEKNOFEST REQUIREMENT: Find groups of duplicate addresses for competition
+REQUIREMENT: Find groups of duplicate addresses for competition
 """
 
 import logging
@@ -25,7 +25,7 @@ except ImportError:
 
 class DuplicateAddressDetector:
     """
-    TEKNOFEST Duplicate Address Detection System
+    Duplicate Address Detection System
     
     Finds groups of addresses that refer to the same physical location
     but are written differently due to:
@@ -63,7 +63,7 @@ class DuplicateAddressDetector:
     
     def find_duplicate_groups(self, addresses: List[str]) -> List[List[int]]:
         """
-        TEKNOFEST REQUIREMENT: Find groups of duplicate addresses
+        REQUIREMENT: Find groups of duplicate addresses
         
         Args:
             addresses: List of address strings to check for duplicates
@@ -649,7 +649,7 @@ class DuplicateAddressDetector:
         return results
 
 
-# Test function for TEKNOFEST validation
+# Test function for validation
 def test_duplicate_detector():
     """Test duplicate detection with Turkish addresses"""
     print("🔍 TESTING DUPLICATE ADDRESS DETECTION")

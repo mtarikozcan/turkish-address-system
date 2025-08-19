@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TEKNOFEST 2025 Turkish Address System Interactive Testing Application
+Address Resolution System Turkish Address System Interactive Testing Application
 
 Interactive console application for testing the complete address processing pipeline
 with step-by-step visualization of all algorithm results.
@@ -34,7 +34,7 @@ except ImportError as e:
 logging.getLogger().setLevel(logging.WARNING)
 
 class InteractiveAddressTester:
-    """Interactive testing application for TEKNOFEST Turkish Address System"""
+    """Interactive testing application for Address Resolution System Turkish Address System"""
     
     def __init__(self):
         """Initialize the testing application with all components"""
@@ -45,7 +45,7 @@ class InteractiveAddressTester:
         self.parser = None
         self.matcher = None
         
-        print("🏗️  TEKNOFEST 2025 Turkish Address System Interactive Tester")
+        print("🏗️  Address Resolution System Turkish Address System Interactive Tester")
         print("=" * 60)
         
         self._load_components()

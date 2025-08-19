@@ -1,26 +1,26 @@
-# TEKNOFEST Adres Çözümleme Sistemi - Product Requirements Document (PRD)
+# Turkish Address Resolution System - Product Requirements Document (PRD)
 
 **Version:** 1.0  
-**Date:** Ağustos 2025  
-**Target:** Claude Code Implementation  
-**Project:** TEKNOFEST Yapay Zeka Destekli Adres Çözümleme Yarışması
+**Date:** August 2025  
+**Target:** Production Implementation  
+**Project:** AI-Powered Turkish Address Resolution System
 
 ---
 
-## 🎯 PROJECT OVERVIEW
+## PROJECT OVERVIEW
 
 ### Product Vision
 Türkçe adreslerdeki yazım farklılıklarını, kısaltmaları ve hataları düzelterek, aynı adresleri yüksek doğrulukla eşleştiren, açıklanabilir ve production-ready yapay zeka sistemi.
 
 ### Success Metrics
-- **Kaggle F1-Score:** > 0.85
+- **F1-Score:** > 0.85
 - **Processing Speed:** < 100ms per address
 - **API Response Time:** < 200ms
 - **System Accuracy:** > 87% on test dataset
 
 ---
 
-## 🏗️ SYSTEM ARCHITECTURE
+## SYSTEM ARCHITECTURE
 
 ### Core Components
 ```
@@ -64,7 +64,7 @@ pytest-asyncio>=0.21.0
 
 ---
 
-## 🔧 CORE ALGORITHMS SPECIFICATIONS
+##  CORE ALGORITHMS SPECIFICATIONS
 
 ### Algorithm 1: Address Validator (`src/address_validator.py`)
 
@@ -256,7 +256,7 @@ class AddressParser:
 **Purpose:** Gelişmiş hibrit adres eşleştirme sistemi
 
 ### Algorithm 5: Duplicate Address Detector (`src/duplicate_detector.py`) 
-**[MISSING - TEKNOFEST REQUIREMENT]**
+**[MISSING - Address Resolution System REQUIREMENT]**
 
 **Purpose:** Aynı adresleri gruplayarak tekrar eden kayıtları tespit etme
 
@@ -280,7 +280,7 @@ class DuplicateAddressDetector:
 ```
 
 ### Algorithm 6: Address Geocoder (`src/address_geocoder.py`)
-**[MISSING - TEKNOFEST REQUIREMENT]**
+**[MISSING - Address Resolution System REQUIREMENT]**
 
 **Purpose:** Adres tamamlama ve coğrafi kodlama
 
@@ -369,7 +369,7 @@ def calculate_hybrid_similarity(self, addr1, addr2, coords1=None, coords2=None):
 
 ---
 
-## 🗄️ DATABASE SPECIFICATIONS
+## 🗄 DATABASE SPECIFICATIONS
 
 ### PostgreSQL + PostGIS Schema
 
@@ -802,7 +802,7 @@ class HealthResponse(BaseModel):
 
 # FastAPI App
 app = FastAPI(
-    title="TEKNOFEST Adres Çözümleme API",
+    title="Address Resolution System Adres Çözümleme API",
     description="Türkçe adres eşleştirme ve doğrulama sistemi",
     version="1.0.0"
 )
@@ -822,7 +822,7 @@ pipeline = None
 async def startup_event():
     """Initialize pipeline on startup"""
     global pipeline
-    db_connection = os.getenv("DATABASE_URL", "postgresql://user:pass@localhost/teknofest_db")
+    db_connection = os.getenv("DATABASE_URL", "postgresql://user:pass@localhost/address_db")
     pipeline = GeoIntegratedPipeline(db_connection)
 
 def get_pipeline() -> GeoIntegratedPipeline:
@@ -934,7 +934,7 @@ if __name__ == "__main__":
 
 ---
 
-## 🎪 DEMO APPLICATION SPECIFICATIONS
+##  DEMO APPLICATION SPECIFICATIONS
 
 ### Streamlit Demo (`demo_app.py`)
 
@@ -953,12 +953,12 @@ API_BASE_URL = "http://localhost:8000/api/v1"
 
 def main():
     st.set_page_config(
-        page_title="TEKNOFEST Adres Çözümleme Sistemi",
-        page_icon="🎯",
+        page_title="Address Resolution System Adres Çözümleme Sistemi",
+        page_icon="",
         layout="wide"
     )
     
-    st.title("🎯 TEKNOFEST Adres Çözümleme Sistemi")
+    st.title(" Address Resolution System Adres Çözümleme Sistemi")
     st.markdown("**Türkçe Adres Eşleştirme ve Doğrulama Sistemi - DEMO**")
     
     # Sidebar for system status
@@ -969,12 +969,12 @@ def main():
     
     # Main tabs
     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-        "🔍 Adres Doğrulama", 
-        "✏️ Yazım Düzeltme", 
+        " Adres Doğrulama", 
+        "✏ Yazım Düzeltme", 
         "🧩 Adres Ayrıştırma", 
         "🔗 Adres Eşleme",
-        "📊 Toplu İşlem",
-        "✨ Adres Dönüşüm Hikayesi"
+        " Toplu İşlem",
+        " Adres Dönüşüm Hikayesi"
     ])
     
     with tab1:
@@ -997,7 +997,7 @@ def main():
 
 def address_validation_demo():
     """Adres Doğrulama Algoritması Demo"""
-    st.header("🔍 Adres Doğrulama Algoritması")
+    st.header(" Adres Doğrulama Algoritması")
     st.markdown("Bu algoritma adresin hiyerarşik tutarlılığını kontrol eder.")
     
     # Input section
@@ -1022,7 +1022,7 @@ def address_validation_demo():
     with col2:
         st.info("**Doğrulama Kriterleri:**\n- İl-İlçe-Mahalle tutarlılığı\n- Posta kodu kontrolü\n- Koordinat doğrulaması")
     
-    if st.button("🔍 Adres Doğrula", type="primary") and input_address:
+    if st.button(" Adres Doğrula", type="primary") and input_address:
         with st.spinner("Adres doğrulanıyor..."):
             result = call_api_process_address(input_address)
             
@@ -1033,7 +1033,7 @@ def address_validation_demo():
                 col1, col2, col3 = st.columns(3)
                 
                 with col1:
-                    status = "✅ Geçerli" if validation.get('is_valid') else "❌ Geçersiz"
+                    status = " Geçerli" if validation.get('is_valid') else "❌ Geçersiz"
                     st.metric("Doğrulama Durumu", status)
                 
                 with col2:
@@ -1060,7 +1060,7 @@ def address_validation_demo():
                     details = validation.get('validation_details', {})
                     for key, value in details.items():
                         if isinstance(value, bool):
-                            st.write(f"**{key}:** {'✅' if value else '❌'}")
+                            st.write(f"**{key}:** {'' if value else '❌'}")
                         else:
                             st.write(f"**{key}:** {value}")
 
@@ -1127,11 +1127,11 @@ def address_matching_demo():
                 # Decision
                 st.subheader("Eşleştirme Kararı")
                 if similarity > 0.85:
-                    st.success("🎯 **Yüksek Benzerlik** - Aynı adres olma olasılığı yüksek")
+                    st.success(" **Yüksek Benzerlik** - Aynı adres olma olasılığı yüksek")
                 elif similarity > 0.6:
-                    st.warning("⚠️ **Orta Benzerlik** - Manuel kontrol önerilir")
+                    st.warning("️ **Orta Benzerlik** - Manuel kontrol önerilir")
                 else:
-                    st.error("❌ **Düşük Benzerlik** - Farklı adresler")
+                    st.error(" **Düşük Benzerlik** - Farklı adresler")
                 
                 # Visualization
                 st.subheader("Benzerlik Skorları Dağılımı")
@@ -1148,7 +1148,7 @@ def address_matching_demo():
 
 def batch_processing_demo():
     """Toplu İşlem Demo"""
-    st.header("📊 Toplu Adres İşleme")
+    st.header(" Toplu Adres İşleme")
     st.markdown("Birden fazla adresi aynı anda işleyin.")
     
     # File upload
@@ -1186,7 +1186,7 @@ def batch_processing_demo():
         })
         st.dataframe(df_display, use_container_width=True)
         
-        if st.button("📊 Toplu İşleme Başla", type="primary"):
+        if st.button(" Toplu İşleme Başla", type="primary"):
             process_batch_addresses(st.session_state.batch_addresses)
 
 def process_batch_addresses(addresses):
@@ -1254,7 +1254,7 @@ def process_batch_addresses(addresses):
 
 def address_transformation_story_demo():
     """Bir adresin sistemdeki yolculuğunu adım adım gösteren demo"""
-    st.header("✨ Adres Dönüşüm Hikayesi")
+    st.header(" Adres Dönüşüm Hikayesi")
     st.markdown("Girilen bir adresin, sistemimizdeki işlem adımlarından geçerek nasıl nihai sonuca ulaştığını görsel olarak takip edin.")
 
     input_address = st.text_input("Analiz edilecek adres:", "Istbl şişli mecidiyeköy mah büyükdere cd no:15/A")
@@ -1274,14 +1274,14 @@ def address_transformation_story_demo():
             corrections = result.get('corrections_applied', [])
             corrected_address = result.get('corrected_address', '')
             
-            st.info("🔧 **İşlem:** Türkçe karakterler normalize edildi, kısaltmalar açıldı, yazım hataları düzeltildi.")
+            st.info(" **İşlem:** Türkçe karakterler normalize edildi, kısaltmalar açıldı, yazım hataları düzeltildi.")
             
             if corrections:
                 st.write("**Yapılan Düzeltmeler:**")
                 for correction in corrections:
                     st.write(f"- **{correction['type'].title()}:** {correction['original']} → {correction['corrected']}")
             
-            st.success(f"✅ **Sonuç:** {corrected_address}")
+            st.success(f" **Sonuç:** {corrected_address}")
 
             # Step 3: Adres Ayrıştırma
             st.subheader("Adım 3: Bileşenlere Ayırma (AddressParser)")
@@ -1304,7 +1304,7 @@ def address_transformation_story_demo():
             st.subheader("Adım 4: Veritabanından Aday Eşleşmeleri Bulma (PostGISManager)")
             matches = result.get('matches', [])
             
-            st.info("🗄️ **İşlem:** Ayrıştırılan bileşenler kullanılarak veritabanından coğrafi ve hiyerarşik olarak en yakın adaylar getirildi.")
+            st.info("🗄 **İşlem:** Ayrıştırılan bileşenler kullanılarak veritabanından coğrafi ve hiyerarşik olarak en yakın adaylar getirildi.")
             
             if matches:
                 st.write(f"**Bulunan {len(matches)} aday eşleşme:**")
@@ -1316,7 +1316,7 @@ def address_transformation_story_demo():
             # Step 5: Hibrit Skorlama ve Son Karar
             st.subheader("Adım 5: Hibrit Benzerlik Skorlaması (HybridAddressMatcher)")
             
-            st.info("⚖️ **İşlem:** Her bir aday ile işlenmiş adres arasında 4 farklı metrikte (anlamsal, coğrafi, metinsel, hiyerarşik) benzerlik hesaplandı ve ağırlıklı bir nihai skor oluşturuldu.")
+            st.info("⚖ **İşlem:** Her bir aday ile işlenmiş adres arasında 4 farklı metrikte (anlamsal, coğrafi, metinsel, hiyerarşik) benzerlik hesaplandı ve ağırlıklı bir nihai skor oluşturuldu.")
             
             if matches and len(matches) > 0:
                 best_match = matches[0]
@@ -1342,7 +1342,7 @@ def address_transformation_story_demo():
                     st.progress(hierarchical)
                 
                 final_score = best_match.get('similarity_score', 0)
-                st.success(f"🏆 **En Yüksek Olasılıklı Eşleşme:** {best_match.get('candidate_address', 'N/A')}, Skor: {final_score:.2f}")
+                st.success(f" **En Yüksek Olasılıklı Eşleşme:** {best_match.get('candidate_address', 'N/A')}, Skor: {final_score:.2f}")
             
             # Final Confidence
             st.subheader("Adım 6: Nihai Güven Skoru")
@@ -1400,16 +1400,16 @@ def check_system_health():
         if response.status_code == 200:
             health = response.json()
             if health['status'] == 'healthy':
-                st.success("✅ Sistem sağlıklı çalışıyor")
+                st.success(" Sistem sağlıklı çalışıyor")
             else:
-                st.warning("⚠️ Sistem kısmen çalışıyor")
+                st.warning("️ Sistem kısmen çalışıyor")
                 
-            st.write(f"**Veritabanı:** {'✅' if health['database_connected'] else '❌'}")
-            st.write(f"**ML Modeller:** {'✅' if health['ml_models_loaded'] else '❌'}")
+            st.write(f"**Veritabanı:** {'' if health['database_connected'] else '❌'}")
+            st.write(f"**ML Modeller:** {'' if health['ml_models_loaded'] else '❌'}")
         else:
-            st.error("❌ Sistem erişilemez durumda")
+            st.error(" Sistem erişilemez durumda")
     except:
-        st.error("❌ API sunucusu yanıt vermiyor")
+        st.error(" API sunucusu yanıt vermiyor")
 
 if __name__ == "__main__":
     main()
@@ -1557,15 +1557,15 @@ def generate_performance_report():
     
     # This would be enhanced to parse test results and generate formatted report
     report = """
-# TEKNOFEST Adres Çözümleme Sistemi - Performans Raporu
+# Address Resolution System Adres Çözümleme Sistemi - Performans Raporu
 
 ## Doğruluk Metrikleri
 
 ### Test Sonuçları:
-- **F1-Score:** 0.87 ✅ (Hedef: >0.80)
-- **Precision:** 0.89 ✅
-- **Recall:** 0.85 ✅
-- **Genel Doğruluk:** 87% ✅
+- **F1-Score:** 0.87  (Hedef: >0.80)
+- **Precision:** 0.89 
+- **Recall:** 0.85 
+- **Genel Doğruluk:** 87% 
 
 ### Test Veri Seti:
 - **Toplam Test:** 500 adres
@@ -1575,22 +1575,22 @@ def generate_performance_report():
 ## Hız Metrikleri
 
 ### İşleme Süresi:
-- **Ortalama:** 78ms/adres ✅ (Hedef: <100ms)
-- **Maksimum:** 145ms/adres ✅ (Hedef: <200ms)
+- **Ortalama:** 78ms/adres  (Hedef: <100ms)
+- **Maksimum:** 145ms/adres  (Hedef: <200ms)
 - **Minimum:** 45ms/adres
 
 ### Batch İşleme:
-- **Throughput:** 850 adres/saniye ✅
-- **API Response Time:** 95ms ortalama ✅ (Hedef: <200ms)
+- **Throughput:** 850 adres/saniye 
+- **API Response Time:** 95ms ortalama  (Hedef: <200ms)
 
 ## Kaggle Hedef Karşılaştırması
 
 | Metrik | Hedef | Sonuç | Durum |
 |--------|-------|-------|-------|
-| F1-Score | >0.80 | 0.87 | ✅ BAŞARILI |
-| İşleme Hızı | <100ms | 78ms | ✅ BAŞARILI |
-| API Yanıt | <200ms | 95ms | ✅ BAŞARILI |
-| Throughput | >500/sn | 850/sn | ✅ BAŞARILI |
+| F1-Score | >0.80 | 0.87 |  BAŞARILI |
+| İşleme Hızı | <100ms | 78ms |  BAŞARILI |
+| API Yanıt | <200ms | 95ms |  BAŞARILI |
+| Throughput | >500/sn | 850/sn |  BAŞARILI |
 
 ## Sistem Gereksinimleri
 
@@ -1627,7 +1627,7 @@ if __name__ == "__main__":
 
 ---
 
-## 🚀 DEPLOYMENT AND SETUP
+##  DEPLOYMENT AND SETUP
 
 ### Docker Configuration (`docker-compose.yml`)
 
@@ -1639,8 +1639,8 @@ services:
   database:
     image: postgis/postgis:15-3.3
     environment:
-      POSTGRES_DB: teknofest_db
-      POSTGRES_USER: teknofest_user
+      POSTGRES_DB: address_db
+      POSTGRES_USER: address_user
       POSTGRES_PASSWORD: teknofest_password
     ports:
       - "5432:5432"
@@ -1648,7 +1648,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./database/:/docker-entrypoint-initdb.d/
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U teknofest_user -d teknofest_db"]
+      test: ["CMD-SHELL", "pg_isready -U address_user -d address_db"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -1659,7 +1659,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql://teknofest_user:teknofest_password@database:5432/teknofest_db
+      - DATABASE_URL=postgresql://address_user:teknofest_password@database:5432/address_db
       - REDIS_URL=redis://redis:6379
     depends_on:
       database:
@@ -1737,18 +1737,18 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```bash
 #!/bin/bash
 
-echo "🎯 TEKNOFEST Adres Çözümleme Sistemi Kurulumu"
+echo " Address Resolution System Adres Çözümleme Sistemi Kurulumu"
 echo "=============================================="
 
 # Check if Docker is installed
 if ! command -v docker &> /dev/null; then
-    echo "❌ Docker bulunamadı. Lütfen Docker'ı kurun."
+    echo " Docker bulunamadı. Lütfen Docker'ı kurun."
     exit 1
 fi
 
 # Check if Docker Compose is installed
 if ! command -v docker-compose &> /dev/null; then
-    echo "❌ Docker Compose bulunamadı. Lütfen Docker Compose'u kurun."
+    echo " Docker Compose bulunamadı. Lütfen Docker Compose'u kurun."
     exit 1
 fi
 
@@ -1762,7 +1762,7 @@ python -c "
 from sentence_transformers import SentenceTransformer
 model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
 model.save('./models/sentence_transformer')
-print('✅ Sentence Transformer modeli indirildi')
+print(' Sentence Transformer modeli indirildi')
 "
 
 # Build and start services
@@ -1774,32 +1774,32 @@ echo "⏳ Servisler hazırlanıyor..."
 sleep 30
 
 # Run database migrations
-echo "🗄️ Veritabanı tabloları oluşturuluyor..."
-docker-compose exec database psql -U teknofest_user -d teknofest_db -f /docker-entrypoint-initdb.d/001_create_tables.sql
-docker-compose exec database psql -U teknofest_user -d teknofest_db -f /docker-entrypoint-initdb.d/002_spatial_functions.sql
+echo "🗄 Veritabanı tabloları oluşturuluyor..."
+docker-compose exec database psql -U address_user -d address_db -f /docker-entrypoint-initdb.d/001_create_tables.sql
+docker-compose exec database psql -U address_user -d address_db -f /docker-entrypoint-initdb.d/002_spatial_functions.sql
 
 # Run performance tests
 echo "🧪 Performans testleri çalıştırılıyor..."
 docker-compose exec api python -m pytest tests/performance/ -v
 
 # Generate performance report
-echo "📊 Performans raporu oluşturuluyor..."
+echo " Performans raporu oluşturuluyor..."
 docker-compose exec api python tests/performance/test_performance.py
 
 echo ""
-echo "✅ Kurulum tamamlandı!"
+echo " Kurulum tamamlandı!"
 echo ""
 echo "🌐 API Endpoint: http://localhost:8000"
-echo "📊 Demo Interface: http://localhost:8501"
+echo " Demo Interface: http://localhost:8501"
 echo "📖 API Documentation: http://localhost:8000/docs"
 echo "🏥 Health Check: http://localhost:8000/api/v1/health"
 echo ""
-echo "🎯 Sistem hazır! TEKNOFEST demo için kullanabilirsiniz."
+echo " Sistem hazır! Address Resolution System demo için kullanabilirsiniz."
 ```
 
 ---
 
-## 📝 IMPLEMENTATION CHECKLIST
+##  IMPLEMENTATION CHECKLIST
 
 ### Phase 1: Foundation (Days 1-3)
 - [ ] **Project Structure Setup**
@@ -1922,7 +1922,7 @@ echo "🎯 Sistem hazır! TEKNOFEST demo için kullanabilirsiniz."
 
 ---
 
-## 🎯 SUCCESS CRITERIA VALIDATION
+##  SUCCESS CRITERIA VALIDATION
 
 ### Kaggle Submission Requirements
 ```python
@@ -1940,15 +1940,15 @@ def validate_kaggle_submission():
     assert results['f1_score'] >= min_f1_score, f"F1-Score {results['f1_score']:.3f} below {min_f1_score}"
     assert results['avg_processing_time_ms'] <= max_processing_time_ms, f"Processing time {results['avg_processing_time_ms']:.1f}ms above {max_processing_time_ms}ms"
     
-    print("✅ Kaggle submission requirements met!")
+    print(" Kaggle submission requirements met!")
     return True
 ```
 
-### TEKNOFEST Demo Requirements
+### Address Resolution System Demo Requirements
 ```python
 # Demo readiness checklist
 def validate_demo_readiness():
-    """Ensure demo meets TEKNOFEST presentation requirements"""
+    """Ensure demo meets Address Resolution System presentation requirements"""
     
     checklist = {
         'api_endpoints_working': test_all_api_endpoints(),
@@ -1962,20 +1962,20 @@ def validate_demo_readiness():
     all_passed = all(checklist.values())
     
     for requirement, status in checklist.items():
-        status_icon = "✅" if status else "❌"
+        status_icon = "" if status else "❌"
         print(f"{status_icon} {requirement}")
     
     if all_passed:
-        print("\n🎯 Demo tamamen hazır! TEKNOFEST sunumuna başlayabilirsiniz.")
+        print("\n Demo tamamen hazır! Address Resolution System sunumuna başlayabilirsiniz.")
     else:
-        print("\n⚠️ Demo henüz hazır değil. Yukarıdaki sorunları düzeltin.")
+        print("\n️ Demo henüz hazır değil. Yukarıdaki sorunları düzeltin.")
     
     return all_passed
 ```
 
 ---
 
-## 🔧 CLAUDE CODE INTEGRATION GUIDELINES
+##  CLAUDE CODE INTEGRATION GUIDELINES
 
 ### Code Generation Instructions for Claude Code
 
@@ -2045,4 +2045,4 @@ When Claude Code implements this PRD, follow these specific guidelines:
 - Monitoring and metrics
 - Advanced error recovery
 
-This PRD provides complete specifications for Claude Code to implement a winning TEKNOFEST solution. Each component is detailed with exact function signatures, expected inputs/outputs, and performance requirements.
+This PRD provides complete specifications for Claude Code to implement a winning Address Resolution System solution. Each component is detailed with exact function signatures, expected inputs/outputs, and performance requirements.

@@ -1,5 +1,5 @@
 """
-TEKNOFEST 2025 Adres Çözümleme Sistemi
+Address Resolution System
 Turkish Address Abbreviations Dictionary Usage Example
 
 This example demonstrates how to use the abbreviations.json file

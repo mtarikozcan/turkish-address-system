@@ -1065,7 +1065,7 @@ def test_national_normalizer():
         
         # Show coverage statistics
         stats = normalizer.get_coverage_statistics()
-        print(f"📊 Coverage Statistics:")
+        print(f"Coverage Statistics:")
         print(f"   Total records: {stats['total_records']:,}")
         print(f"   Provinces: {stats['provinces_covered']}")
         print(f"   Districts: {stats['districts_covered']}")
@@ -1136,7 +1136,7 @@ def test_national_normalizer():
     avg_time = total_time / len(test_cases) if test_cases else 0
     success_rate = (successful_normalizations / len(test_cases)) * 100
     
-    print(f"\n📊 NATIONAL NORMALIZATION PERFORMANCE:")
+    print(f"\nNATIONAL NORMALIZATION PERFORMANCE:")
     print(f"   Successful normalizations: {successful_normalizations}/{len(test_cases)}")
     print(f"   Success rate: {success_rate:.1f}%")
     print(f"   Average processing time: {avg_time:.2f}ms")
@@ -1149,7 +1149,7 @@ def test_national_normalizer():
         print(f"✅ Turkish-optimized fuzzy matching operational") 
         print(f"✅ Hierarchical validation functional")
         print(f"✅ Performance targets met")
-        print(f"🚀 Ready for production deployment!")
+        print(f"Ready for production deployment!")
         return True
     else:
         print(f"\n🔧 SYSTEM NEEDS OPTIMIZATION")

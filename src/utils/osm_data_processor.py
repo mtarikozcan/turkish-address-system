@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TEKNOFEST 2025 Turkish Address System - OpenStreetMap Data Processor
+Turkish Address System - OpenStreetMap Data Processor
 
 Phase 3.5: System Optimization & Turkey Dataset Integration
 Processes turkey-latest-free.shp.zip to extract Turkish neighborhoods and streets
@@ -41,7 +41,7 @@ from turkish_text_utils import TurkishTextNormalizer
 
 class OSMTurkeyProcessor:
     """
-    OpenStreetMap Turkey Dataset Processor for TEKNOFEST Address System
+    OpenStreetMap Turkey Dataset Processor for Address System
     
     Extracts and processes Turkish geographic data from OSM shapefiles:
     - Administrative boundaries (il, ilçe, mahalle)
@@ -472,7 +472,7 @@ def main():
     """Command line interface for OSM processing"""
     import argparse
     
-    parser = argparse.ArgumentParser(description='Process OSM Turkey dataset for TEKNOFEST Address System')
+    parser = argparse.ArgumentParser(description='Process OSM Turkey dataset for Address System')
     parser.add_argument('--zip', required=True, help='Path to turkey-latest-free.shp.zip')
     parser.add_argument('--csv', help='Path to existing turkey_admin_hierarchy.csv')
     parser.add_argument('--data-dir', default='data/osm', help='Data directory for OSM processing')
@@ -491,7 +491,7 @@ def main():
     
     # Print summary
     print(f"\n🗺️  OSM Turkey Processing Complete!")
-    print(f"📊 Layers analyzed: {results['layers_analyzed']}")
+    print(f"Layers analyzed: {results['layers_analyzed']}")
     print(f"🏙️  Places extracted: {results['places_extracted']:,}")
     print(f"🛣️  Roads extracted: {results['roads_extracted']:,}")
     
@@ -500,7 +500,7 @@ def main():
         enhanced_path = processor.enhance_hierarchy_csv(results, args.csv)
         print(f"✅ Enhanced CSV: {enhanced_path}")
     
-    print(f"\n🎯 Ready for Phase 3.5 integration!")
+    print(f"\nReady for Phase 3.5 integration!")
     return 0
 
 

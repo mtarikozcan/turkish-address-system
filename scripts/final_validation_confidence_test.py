@@ -147,6 +147,6 @@ def final_validation_confidence_test():
 if __name__ == "__main__":
     success = final_validation_confidence_test()
     if success:
-        print(f"\n🏆 TEKNOFEST ADDRESS VALIDATION REQUIREMENTS MET!")
+        print(f"\n🏆 Address Resolution System ADDRESS VALIDATION REQUIREMENTS MET!")
     else:
         print(f"\n🔧 Additional fixes may be needed")

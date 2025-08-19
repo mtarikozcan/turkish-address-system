@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OpenStreetMap Turkey Data Processor for TEKNOFEST Address System
+OpenStreetMap Turkey Data Processor for Address Resolution System Address System
 
 This script processes the OpenStreetMap Turkey dataset to extract neighborhoods and streets
 for building a comprehensive address database. It targets expanding from 355 sample records
@@ -329,7 +329,7 @@ class OSMTurkeyProcessor:
         
         report_lines.extend([
             "",
-            "## TEKNOFEST Address System Progress",
+            "## Address Resolution System Address System Progress",
             f"- Target: {target_neighborhoods:,} neighborhoods",
             f"- Current: {len(neighborhoods_df):,} neighborhoods",
             f"- Progress: {progress_percentage:.1f}%",
@@ -339,7 +339,7 @@ class OSMTurkeyProcessor:
             f"- streets_turkey.csv: {len(streets_df):,} records",
             "",
             "## Next Steps",
-            "1. Import CSV files into the TEKNOFEST address database",
+            "1. Import CSV files into the Address Resolution System address database",
             "2. Implement address matching algorithms",
             "3. Test with real address queries",
             "4. Fine-tune extraction criteria if needed"

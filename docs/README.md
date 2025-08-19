@@ -1,37 +1,37 @@
-# TEKNOFEST 2025 Yapay Zeka Destekli Adres Çözümleme Yarışması
+# Turkish Address Resolution System
 
-## 📍 Proje Durumu: Phase 3.5 - System Optimization & Turkey Dataset Integration
+## Project Status: Phase 3.5 - System Optimization & Turkey Dataset Integration
 
-**🎉 BREAKTHROUGH:** Core system 95% functional with critical parsing bug fixed!
+**BREAKTHROUGH:** Core system 95% functional with critical parsing bug fixed!
 
-## 🎯 Proje Açıklaması
+## Project Description
 
-Bu proje, TEKNOFEST 2025 Yapay Zeka Destekli Adres Çözümleme Yarışması için geliştirilmiş, Türkçe adreslerdeki yazım farklılıklarını, kısaltmaları ve hataları düzelterek, sokak seviyesinde tam ayrıştırma yapabilen, production-ready yapay zeka sistemidir.
+This project is a production-ready AI system developed for Turkish address resolution, capable of correcting spelling variations, abbreviations and errors in Turkish addresses, performing complete street-level parsing.
 
-**🚀 YENİ ÖZELLIKLER:**
-- ✅ **Turkish Character Mastery:** Perfect İ/I, Ğ/G, Ü/U, Ö/O, Ş/S, Ç/C handling
-- ✅ **Intelligent Abbreviation Expansion:** mh→mahallesi, sk→sokak, cd→cadde
-- ✅ **Fuzzy Spelling Correction:** Handles misspelled Turkish place names
-- ✅ **Hierarchical Validation:** il-ilçe-mahalle consistency checking
-- 🔄 **OpenStreetMap Integration:** 50,000+ Turkish locations (in progress)
+** YENİ ÖZELLIKLER:**
+-  **Turkish Character Mastery:** Perfect İ/I, Ğ/G, Ü/U, Ö/O, Ş/S, Ç/C handling
+-  **Intelligent Abbreviation Expansion:** mh→mahallesi, sk→sokak, cd→cadde
+-  **Fuzzy Spelling Correction:** Handles misspelled Turkish place names
+-  **Hierarchical Validation:** il-ilçe-mahalle consistency checking
+-  **OpenStreetMap Integration:** 50,000+ Turkish locations (in progress)
 
-## 🏆 Güncel Performans Metrikleri
+##  Güncel Performans Metrikleri
 
 - **Core Functionality:** 95% Working (Turkish processing excellent)
 - **Address Parsing:** Perfect for "mahallesi" suffixed addresses
 - **Character Normalization:** 100% Turkish character accuracy  
-- **Critical Bugs:** ✅ FIXED (no more IL name duplication)
+- **Critical Bugs:**  FIXED (no more IL name duplication)
 - **Target Coverage:** 50,000+ Turkish neighborhoods (OSM integration)
 
-## 🏗️ Sistem Mimarisi
+## ️ Sistem Mimarisi
 
-### Core Components (✅ Operational)
+### Core Components ( Operational)
 1. **Address Corrector** - Turkish spelling correction + abbreviation expansion
 2. **Address Parser** - Component extraction (il, ilçe, mahalle, sokak, bina)  
 3. **Address Validator** - Hierarchical consistency validation
 4. **Turkish Text Normalizer** - Centralized character handling
 
-### 🗺️ Data Integration Pipeline (Phase 3.5)
+### 🗺 Data Integration Pipeline (Phase 3.5)
 **OpenStreetMap Turkey Dataset Integration**
 - **Input:** turkey-latest-free.shp.zip (Complete Turkey shapefiles)
 - **Processing:** Extract neighborhoods, streets, boundaries, POIs
@@ -40,10 +40,10 @@ Bu proje, TEKNOFEST 2025 Yapay Zeka Destekli Adres Çözümleme Yarışması iç
 
 ### Target Address Processing Examples:
 ```
-🏠 Basic: "istanbul kadikoy moda mh" → ✅ WORKING
-🛣️  Street: "istanbul kadikoy moda bagdat caddesi 127" → 🎯 TARGET
-🏢 Complex: "ankara cankaya kizilay tunali hilmi caddesi 25/A" → 🎯 TARGET  
-🏗️  Building: "izmir konak alsancak kordon boyu 15 b blok" → 🎯 TARGET
+🏠 Basic: "istanbul kadikoy moda mh" →  WORKING
+🛣  Street: "istanbul kadikoy moda bagdat caddesi 127" → 🎯 TARGET
+🏢 Complex: "ankara cankaya kizilay tunali hilmi caddesi 25/A" →  TARGET  
+️  Building: "izmir konak alsancak kordon boyu 15 b blok" → 🎯 TARGET
 ```
 
 ## 📁 Proje Yapısı
@@ -58,7 +58,7 @@ Bu proje, TEKNOFEST 2025 Yapay Zeka Destekli Adres Çözümleme Yarışması iç
 └── README.md             # Bu dosya
 ```
 
-## 🚀 Kurulum
+##  Kurulum
 
 ### Gereksinimler
 
@@ -114,7 +114,7 @@ pytest tests/performance/ -v
 pytest tests/test_address_validator.py -v
 ```
 
-## 📊 API Endpoints
+##  API Endpoints
 
 - `POST /api/v1/process` - Tek adres işleme
 - `POST /api/v1/batch` - Toplu adres işleme
@@ -122,7 +122,7 @@ pytest tests/test_address_validator.py -v
 - `GET /api/v1/health` - Sistem durumu
 - `GET /api/v1/metrics` - Performans metrikleri
 
-## 🎪 Demo Uygulaması
+##  Demo Uygulaması
 
 Streamlit tabanlı interaktif demo uygulaması:
 - Adres doğrulama testi
@@ -131,7 +131,7 @@ Streamlit tabanlı interaktif demo uygulaması:
 - Eşleştirme algoritması demo'su
 - Toplu işlem interface'i
 
-## 📈 Performans
+##  Performans
 
 Güncel performans metrikleri:
 - **F1-Score:** Güncellenmesi bekleniyor
@@ -148,7 +148,7 @@ Güncel performans metrikleri:
 
 ## 📄 Lisans
 
-Bu proje TEKNOFEST 2025 yarışması kapsamında geliştirilmiştir.
+Bu proje Address Resolution System yarışması kapsamında geliştirilmiştir.
 
 ## 📞 İletişim
 
@@ -156,4 +156,4 @@ Proje ekibi ile iletişim için GitHub Issues kullanın.
 
 ---
 
-**🎯 TEKNOFEST 2025 - Yapay Zeka Destekli Adres Çözümleme Yarışması**
+** Address Resolution System - Yapay Zeka Destekli Adres Çözümleme Yarışması**

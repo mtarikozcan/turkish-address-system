@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TEKNOFEST KAGGLE YARIŞMASI ÇÖZÜMÜ - OPTİMİZE VERSİYON
+Address Resolution System KAGGLE YARIŞMASI ÇÖZÜMÜ - OPTİMİZE VERSİYON
 Hızlı ve etkili adres eşleştirme çözümü
 """
 
@@ -198,7 +198,7 @@ class TeknoFestOptimizedSolution:
 
 def main():
     """Ana çözüm"""
-    print("🏆 TEKNOFEST KAGGLE YARIŞMASI - OPTİMİZE ÇÖZÜM")
+    print("🏆 Address Resolution System KAGGLE YARIŞMASI - OPTİMİZE ÇÖZÜM")
     print("=" * 70)
     
     # Çözümü başlat

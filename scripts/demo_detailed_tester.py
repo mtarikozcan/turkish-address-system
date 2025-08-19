@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TEKNOFEST 2025 - Detailed Manual Tester Demo
+Address Resolution System - Detailed Manual Tester Demo
 Demonstration of the detailed manual testing interface capabilities
 
 This script shows examples of using the detailed manual tester
@@ -133,7 +133,7 @@ def demo_export_functionality():
 
 def main():
     """Run all demos"""
-    print("🚀 TEKNOFEST 2025 - DETAILED MANUAL TESTER DEMO")
+    print("🚀 Address Resolution System - DETAILED MANUAL TESTER DEMO")
     print("=" * 80)
     print("This demo shows all capabilities of the detailed manual testing interface")
     print()
@@ -168,7 +168,7 @@ def main():
         print("✅ Performance Timing - Processing time measurement")
         print("✅ Error Analysis - Warning and error detection")
         print()
-        print("🎯 Ready for TEKNOFEST 2025 jury evaluation!")
+        print("🎯 Ready for Address Resolution System jury evaluation!")
         print()
         print("To use interactively, run: python3 detailed_manual_tester.py")
         

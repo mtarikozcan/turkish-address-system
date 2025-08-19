@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TEKNOFEST Final Optimization Test
+Address Resolution System Final Optimization Test
 Comprehensive evaluation of street-level and building-level parsing improvements
 """
 
@@ -16,15 +16,15 @@ from address_parser import AddressParser
 from address_validator import AddressValidator
 
 def test_teknofest_optimization():
-    """Test all TEKNOFEST optimization improvements"""
+    """Test all Address Resolution System optimization improvements"""
     
-    print("🏆 TEKNOFEST FINAL OPTIMIZATION EVALUATION")
+    print("🏆 Address Resolution System FINAL OPTIMIZATION EVALUATION")
     print("=" * 70)
     
     parser = AddressParser()
     validator = AddressValidator()
     
-    # TEKNOFEST competition test cases
+    # Address Resolution System competition test cases
     test_cases = [
         {
             "category": "Street-Level Parsing",
@@ -165,20 +165,20 @@ def test_teknofest_optimization():
         
         print(f"\n   📊 {category} Score: {category_passed}/{category_total} ({category_score:.1f}%)")
     
-    # Final TEKNOFEST evaluation
+    # Final Address Resolution System evaluation
     overall_score = total_passed / total_tests * 100
     
-    print(f"\n🏆 TEKNOFEST OPTIMIZATION RESULTS")
+    print(f"\n🏆 Address Resolution System OPTIMIZATION RESULTS")
     print("=" * 70)
     
     for category, score in category_scores.items():
         status = "✅ EXCELLENT" if score >= 80 else "⚠️ NEEDS WORK" if score >= 60 else "❌ FAILED"
         print(f"   {category}: {score:.1f}% {status}")
     
-    print(f"\n🎯 OVERALL TEKNOFEST READINESS: {overall_score:.1f}%")
+    print(f"\n🎯 OVERALL Address Resolution System READINESS: {overall_score:.1f}%")
     
     if overall_score >= 80:
-        print("   🎉 COMPETITION READY! System meets TEKNOFEST requirements")
+        print("   🎉 COMPETITION READY! System meets Address Resolution System requirements")
     elif overall_score >= 60:
         print("   ⚠️ PARTIALLY READY - Minor improvements needed")
     else:

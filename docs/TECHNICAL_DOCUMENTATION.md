@@ -1,4 +1,4 @@
-# 📚 TEKNOFEST 2025 Turkish Address Processing System
+# Turkish Address Processing System
 ## Complete Technical Documentation & Architecture Analysis
 
 ---
@@ -461,7 +461,7 @@ def normalize_turkish_chars(text):
 ### 🔴 CRITICAL ISSUES
 1. **Turkish Character Corruption**: Core normalization bug
 2. **Limited Intelligence**: ~5 mappings vs 27,083 available
-3. **Missing TEKNOFEST Features**: No duplicate detection, no geocoding
+3. **Missing Address Resolution System Features**: No duplicate detection, no geocoding
 4. **Data Underutilization**: 55,955 OSM records largely unused
 
 ### 🟡 HIGH PRIORITY ISSUES  
@@ -498,7 +498,7 @@ def infer_context(self, address_parts):
     # Add fuzzy matching
 ```
 
-### Priority 3: Add TEKNOFEST Features
+### Priority 3: Add Address Resolution System Features
 - DuplicateDetector class
 - AddressGeocoder class  
 - KaggleFormatter class

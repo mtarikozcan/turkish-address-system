@@ -313,7 +313,7 @@ if __name__ == "__main__":
         print(f"✅ Output: {result['corrected_address']}")
         if result['corrections_applied']:
             print(f"📝 Corrections: {', '.join(result['corrections_applied'])}")
-        print(f"🎯 Confidence: {result['confidence']:.2f}")
+        print(f"Confidence: {result['confidence']:.2f}")
     
     print("\n" + "=" * 60)
     print("✅ Turkish character handling test complete!")

@@ -1,8 +1,8 @@
 """
-TEKNOFEST 2025 - Address Geocoding System
+Address Resolution System - Address Geocoding System
 Algorithm 6: Address Geocoder
 
-TEKNOFEST REQUIREMENT: Convert addresses to coordinates and vice versa
+REQUIREMENT: Convert addresses to coordinates and vice versa
 """
 
 import logging
@@ -28,7 +28,7 @@ except ImportError:
 
 class AddressGeocoder:
     """
-    TEKNOFEST Address Geocoding System
+    Address Geocoding System
     
     Converts Turkish addresses to coordinates using:
     1. OSM data from enhanced_turkish_neighborhoods.csv (55,955 records)
@@ -157,7 +157,7 @@ class AddressGeocoder:
     
     def geocode_turkish_address(self, address: str) -> Dict[str, Any]:
         """
-        TEKNOFEST REQUIREMENT: Convert address to coordinates
+        REQUIREMENT: Convert address to coordinates
         
         Args:
             address: Turkish address string
@@ -730,7 +730,7 @@ class AddressGeocoder:
         }
 
 
-# Test function for TEKNOFEST validation
+# Test function for validation
 def test_address_geocoder():
     """Test address geocoding with Turkish addresses"""
     print("🌍 TESTING ADDRESS GEOCODING SYSTEM")

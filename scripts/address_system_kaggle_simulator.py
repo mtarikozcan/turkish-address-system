@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TEKNOFEST YAPAY ZEKA DESTEKLİ ADRES ÇÖZÜMLEME YARIŞMASI
+Address Resolution System YAPAY ZEKA DESTEKLİ ADRES ÇÖZÜMLEME YARIŞMASI
 Kaggle Aşaması Simülatörü
 Gerçekçi sentetik Türkçe adres veri seti üretimi
 """
@@ -388,7 +388,7 @@ class TeknoFestAddressDataGenerator:
 
 def main():
     """Ana üretim fonksiyonu"""
-    print("🏁 TEKNOFEST KAGGLE ADRESÇÖZÜMLEME YARIŞMASI SİMÜLATÖRÜ")
+    print("🏁 Address Resolution System KAGGLE ADRESÇÖZÜMLEME YARIŞMASI SİMÜLATÖRÜ")
     print("=" * 70)
     print("Gerçekçi sentetik Türkçe adres veri seti üretimi başlıyor...\n")
     

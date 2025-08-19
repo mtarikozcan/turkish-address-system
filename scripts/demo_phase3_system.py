@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TEKNOFEST 2025 Turkish Address System - Phase 3.5 Demo
+Address Resolution System Turkish Address System - Phase 3.5 Demo
 
 Interactive demonstration of current system capabilities:
 - Turkish character mastery  
@@ -31,11 +31,11 @@ except ImportError as e:
     sys.exit(1)
 
 
-class TEKNOFESTAddressDemo:
-    """Interactive demonstration of TEKNOFEST Turkish Address System"""
+class Address Resolution SystemAddressDemo:
+    """Interactive demonstration of Address Resolution System Turkish Address System"""
     
     def __init__(self):
-        print("🚀 Initializing TEKNOFEST Turkish Address System...")
+        print("🚀 Initializing Address Resolution System Turkish Address System...")
         print("   Loading Turkish correction data...")
         self.corrector = AddressCorrector()
         
@@ -102,7 +102,7 @@ class TEKNOFESTAddressDemo:
     def run_comprehensive_demo(self):
         """Run complete system demonstration"""
         
-        print("🎯 TEKNOFEST 2025 Turkish Address System")
+        print("🎯 Address Resolution System Turkish Address System")
         print("Phase 3.5: System Optimization & Turkey Dataset Integration")
         print("Status: Core system 95% functional, critical bugs fixed")
         
@@ -268,7 +268,7 @@ class TEKNOFESTAddressDemo:
 
 def main():
     """Main demo function"""
-    demo = TEKNOFESTAddressDemo()
+    demo = Address Resolution SystemAddressDemo()
     
     # Check command line arguments
     if len(sys.argv) > 1 and sys.argv[1] == 'interactive':

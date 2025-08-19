@@ -1,8 +1,8 @@
 """
-TEKNOFEST 2025 Adres Çözümleme Sistemi - Address Parser Algorithm
+Address Resolution System - Address Parser Algorithm
 
 Algorithm 3: Address Parser
-Türkçe adreslerin yapısal bileşenlerini çıkarma ve analiz etme algoritması
+Turkish address structural component extraction and analysis algorithm
 
 Purpose: Parse Turkish addresses into structured components using both 
 rule-based patterns and ML-based NER extraction with confidence scoring.
@@ -570,7 +570,7 @@ class AddressParser:
             # Determine parsing method used
             parsing_method = self._determine_parsing_method(rule_based_result, ml_based_result)
             
-            # TEKNOFEST: Enhanced confidence scoring for complete addresses
+            # Enhanced confidence scoring for complete addresses
             overall_confidence = self._calculate_enhanced_confidence(combined_components, combined_confidence, raw_address)
             
             return {
@@ -641,7 +641,7 @@ class AddressParser:
                 
                 if clean_words:
                     final_mahalle = ' '.join(clean_words)
-                    # TEKNOFEST: Apply Turkish character fixes
+                    # Apply Turkish character fixes
                     clean_mahalle = self._clean_street_name(final_mahalle)
                     components['mahalle'] = self._format_component(clean_mahalle)
                     confidence_scores['mahalle'] = 0.95
@@ -676,7 +676,7 @@ class AddressParser:
             # Step 5.5: Extract street AFTER all other components to avoid contamination
             components, confidence_scores = self._extract_street_optimized(address, components, confidence_scores)
             
-            # Step 5.6: TEKNOFEST Context-Aware Inference Engine
+            # Step 5.6: Context-Aware Inference Engine
             components, confidence_scores = self._teknofest_context_inference(address, components, confidence_scores)
             
             # Step 5.7: EMERGENCY Geographic Validation
@@ -735,7 +735,7 @@ class AddressParser:
                 for word in mahalle_words:
                     exclude_words.add(self._normalize_to_ascii(word).lower())
                 
-            # TEKNOFEST: Enhanced street patterns with type classification
+            # Enhanced street patterns with type classification
             street_patterns = [
                 # CADDE patterns (main streets/avenues)
                 {'pattern': r'(\w+\s+\w+\s+\w+)\s+(caddesi|cadde|cd)\b', 'field': 'cadde'},
@@ -768,7 +768,7 @@ class AddressParser:
                     street_name = match.group(1).strip()
                     street_type = match.group(2).strip()
                     
-                    self.logger.debug(f"TEKNOFEST Street match: '{street_name} {street_type}' -> field: {field_name}")
+                    self.logger.debug(f"Street match: '{street_name} {street_type}' -> field: {field_name}")
                     
                     # Clean street name from administrative contamination
                     clean_words = []
@@ -790,7 +790,7 @@ class AddressParser:
                         # Create clean street with proper capitalization
                         clean_street_name = ' '.join(clean_words)
                         
-                        # TEKNOFEST: Fix famous Turkish street names and remove suffix contamination
+                        # Fix famous Turkish street names and remove suffix contamination
                         clean_street_name = self._clean_street_name(clean_street_name)
                         
                         # Format complete street name
@@ -799,11 +799,11 @@ class AddressParser:
                         # FINAL CLEANUP: Remove any remaining administrative/suffix contamination
                         final_street = self._remove_administrative_contamination(full_street, components)
                         
-                        # TEKNOFEST: Assign to appropriate field based on street type
+                        # Assign to appropriate field based on street type
                         components[field_name] = final_street
                         confidence_scores[field_name] = 0.85
                         
-                        self.logger.debug(f"TEKNOFEST: Extracted {field_name}: {final_street}")
+                        self.logger.debug(f"Extracted {field_name}: {final_street}")
                         return components, confidence_scores  # Return after finding clean street
             
             return components, confidence_scores
@@ -814,7 +814,7 @@ class AddressParser:
     
     def _extract_building_components(self, address: str, components: dict, confidence_scores: dict) -> tuple:
         """
-        NEW FEATURE: Extract building-level components for TEKNOFEST competition
+        NEW FEATURE: Extract building-level components for competition
         
         Extracts: bina_no, daire, kat, blok, site
         
@@ -841,13 +841,13 @@ class AddressParser:
             for pattern in bina_patterns:
                 match = re.search(pattern, address, re.IGNORECASE)
                 if match:
-                    self.logger.debug(f"TEKNOFEST Building pattern matched: {pattern}")
-                    self.logger.debug(f"TEKNOFEST Match groups: {match.groups()}")
+                    self.logger.debug(f"Building pattern matched: {pattern}")
+                    self.logger.debug(f"Match groups: {match.groups()}")
                     
                     # CRITICAL FIX: Always treat building number as single unit (preserve compounds)
                     components['bina_no'] = match.group(1)
                     confidence_scores['bina_no'] = 0.9
-                    self.logger.debug(f"TEKNOFEST: Extracted building number: {match.group(1)}")
+                    self.logger.debug(f"Extracted building number: {match.group(1)}")
                     break
             
             # CRITICAL FIX: Apartment/flat number patterns - prioritize explicit patterns
@@ -861,9 +861,9 @@ class AddressParser:
                 for pattern in daire_patterns:
                     match = re.search(pattern, address, re.IGNORECASE)
                     if match:
-                        components['daire_no'] = match.group(1).upper()  # TEKNOFEST field name
+                        components['daire_no'] = match.group(1).upper()  # Standard field name
                         confidence_scores['daire_no'] = 0.85
-                        self.logger.debug(f"TEKNOFEST: Extracted apartment: {match.group(1)}")
+                        self.logger.debug(f"Extracted apartment: {match.group(1)}")
                         break
             
             # Floor number patterns
@@ -915,7 +915,7 @@ class AddressParser:
     
     def _emergency_fix_hierarchy(self, address: str, components: dict, confidence_scores: dict, words: list) -> tuple:
         """
-        EMERGENCY FIX: Robust hierarchical extraction for TEKNOFEST competition
+        EMERGENCY FIX: Robust hierarchical extraction for competition
         
         CRITICAL REQUIREMENT: For "istanbul kadikoy moda" must extract:
         - il = "İstanbul" 
@@ -1023,7 +1023,7 @@ class AddressParser:
                 
                 if neighborhood_found:
                     proper_neighborhood = self._get_proper_turkish_name(neighborhood_found, 'neighborhood')
-                    # TEKNOFEST: Apply Turkish character fixes  
+                    # Apply Turkish character fixes  
                     clean_neighborhood = self._clean_street_name(proper_neighborhood or neighborhood_found)
                     components['mahalle'] = self._format_component(clean_neighborhood)
                     confidence_scores['mahalle'] = 0.9
@@ -1338,7 +1338,7 @@ class AddressParser:
     
     def _calculate_enhanced_confidence(self, components: dict, confidence_scores: dict, address: str) -> float:
         """
-        TEKNOFEST: Enhanced confidence scoring for complete address parsing
+        Enhanced confidence scoring for complete address parsing
         
         Boosts confidence for:
         - Complete administrative hierarchy (il-ilce-mahalle)
@@ -1361,7 +1361,7 @@ class AddressParser:
             # Base confidence: average of individual scores
             base_confidence = sum(confidence_scores.values()) / max(len(confidence_scores), 1)
             
-            # TEKNOFEST bonuses for address completeness
+            # Bonuses for address completeness
             completeness_bonus = 0.0
             
             # Administrative hierarchy bonus
@@ -1394,7 +1394,7 @@ class AddressParser:
             elif building_found == 1:
                 completeness_bonus += 0.05  # Basic building detail
             
-            # Special TEKNOFEST patterns bonus
+            # Special patterns bonus
             if 'bina_no' in components and 'daire_no' in components:
                 completeness_bonus += 0.05  # Complete building address
             
@@ -1770,7 +1770,7 @@ class AddressParser:
     
     def _teknofest_context_inference(self, address: str, components: dict, confidence_scores: dict) -> tuple:
         """
-        TEKNOFEST: Context-aware inference engine using OSM data
+        Context-aware inference engine using OSM data
         
         Intelligently infers missing components using OSM street→neighborhood mappings:
         - "ankara cankaya konur sokak" → infer mahalle="Kızılay"
@@ -1785,7 +1785,7 @@ class AddressParser:
             Updated (components, confidence_scores) with inferred components
         """
         try:
-            # TEKNOFEST: Famous street → neighborhood mappings from OSM data
+            # Famous street → neighborhood mappings from OSM data
             street_to_neighborhood = {
                 # Istanbul mappings
                 'bagdat': {'mahalle': 'Moda', 'ilce': 'Kadıköy', 'il': 'İstanbul'},
@@ -1829,7 +1829,7 @@ class AddressParser:
                                     components[component] = value
                                     confidence_scores[component] = 0.8
                                     
-                            self.logger.debug(f"TEKNOFEST: Direct neighborhood inference '{word}' → {mapping}")
+                            self.logger.debug(f"Direct neighborhood inference '{word}' → {mapping}")
                             break  # Use first matching neighborhood
             
             # Check if we can infer missing components from street context
@@ -1853,11 +1853,11 @@ class AddressParser:
                             if component not in components:
                                 components[component] = value
                                 confidence_scores[component] = 0.7  # Lower confidence for inference
-                                self.logger.debug(f"TEKNOFEST: Inferred {component}='{value}' from street context '{word}'")
+                                self.logger.debug(f"Inferred {component}='{value}' from street context '{word}'")
                         
                         break  # Use first matching street
             
-            # TEKNOFEST: District-specific neighborhood inference
+            # District-specific neighborhood inference
             if 'ilce' in components and 'mahalle' not in components:
                 district_neighborhoods = {
                     # Çankaya neighborhoods
@@ -1878,12 +1878,12 @@ class AddressParser:
                     inferred_neighborhood = district_neighborhoods[district_name][0]
                     components['mahalle'] = inferred_neighborhood
                     confidence_scores['mahalle'] = 0.6  # Low confidence for default inference
-                    self.logger.debug(f"TEKNOFEST: Inferred default neighborhood '{inferred_neighborhood}' for district '{components['ilce']}'")
+                    self.logger.debug(f"Inferred default neighborhood '{inferred_neighborhood}' for district '{components['ilce']}'")
             
             return components, confidence_scores
             
         except Exception as e:
-            self.logger.error(f"Error in TEKNOFEST context inference: {e}")
+            self.logger.error(f"Error in context inference: {e}")
             return components, confidence_scores
     
     def _geographic_validation(self, address: str, components: dict, confidence_scores: dict) -> tuple:
@@ -1965,7 +1965,7 @@ class AddressParser:
     
     def _clean_street_name(self, street_name: str) -> str:
         """
-        TEKNOFEST: Clean street name and preserve famous Turkish streets
+        Clean street name and preserve famous Turkish streets
         
         Args:
             street_name: Raw street name
@@ -2015,7 +2015,7 @@ class AddressParser:
     
     def _remove_administrative_contamination(self, street: str, components: dict) -> str:
         """
-        TEKNOFEST: Remove administrative contamination and suffix issues
+        Remove administrative contamination and suffix issues
         
         Args:
             street: Street name to clean
@@ -2035,7 +2035,7 @@ class AddressParser:
                 admin_ascii = self._normalize_to_ascii(admin_val)
                 clean_street = re.sub(rf'\b{re.escape(admin_ascii)}\b', '', clean_street, flags=re.IGNORECASE)
         
-        # TEKNOFEST: Remove suffix contamination
+        # Remove suffix contamination
         clean_street = re.sub(r'\bMahallesi\b', '', clean_street, flags=re.IGNORECASE)
         clean_street = re.sub(r'\bmahallesi\b', '', clean_street, flags=re.IGNORECASE)
         
@@ -2106,7 +2106,7 @@ class AddressParser:
                     for district in districts:
                         if (self._normalize_text(district) == input_normalized or 
                             self._normalize_to_ascii(district) == input_ascii):
-                            # TEKNOFEST: Apply Turkish character fixes
+                            # Apply Turkish character fixes
                             return self._clean_street_name(district)
             
             elif component_type == 'neighborhood':
@@ -2117,7 +2117,7 @@ class AddressParser:
                     if clean_name:
                         if (self._normalize_text(clean_name) == input_normalized or 
                             self._normalize_to_ascii(clean_name) == input_ascii):
-                            # TEKNOFEST: Apply Turkish character fixes
+                            # Apply Turkish character fixes
                             return self._clean_street_name(clean_name)
             
             return ""

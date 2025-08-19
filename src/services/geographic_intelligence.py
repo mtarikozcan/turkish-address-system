@@ -1,5 +1,5 @@
 """
-TEKNOFEST 2025 - Geographic Intelligence Engine
+Geographic Intelligence Engine
 Phase 1: Position-Independent Geographic Component Detection
 
 This module provides intelligent geographic anchor detection using Turkey's
@@ -23,7 +23,7 @@ import time
 
 class GeographicIntelligence:
     """
-    TEKNOFEST Geographic Intelligence Engine
+    Geographic Intelligence Engine
     
     Detects and enriches geographic components using Turkey's complete
     administrative hierarchy database with position-independent matching.
@@ -716,7 +716,7 @@ def test_geographic_intelligence():
     
     # Display statistics
     stats = geo_intel.get_statistics()
-    print(f"\\n📊 Performance Statistics:")
+    print(f"\\nPerformance Statistics:")
     print(f"   Total queries: {stats['total_queries']}")
     print(f"   Successful detections: {stats['successful_detections']}")
     print(f"   Success rate: {stats['success_rate']:.1%}")

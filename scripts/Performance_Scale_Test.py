@@ -135,9 +135,9 @@ class PerformanceScaleAnalyzer:
         print(f"   Total Pipeline: {results['total_avg_ms']:.2f}ms avg")
         print(f"   Memory Usage: {results['memory_usage_mb']:.2f} MB")
         
-        # TEKNOFEST compliance check
+        # Address Resolution System compliance check
         teknofest_compliant = results['total_avg_ms'] < 100
-        print(f"🎯 TEKNOFEST Compliance (<100ms): {'✅ PASS' if teknofest_compliant else '❌ FAIL'}")
+        print(f"🎯 Address Resolution System Compliance (<100ms): {'✅ PASS' if teknofest_compliant else '❌ FAIL'}")
         
         return results
     
@@ -397,13 +397,13 @@ class PerformanceScaleAnalyzer:
         report = f"""
 # PERFORMANCE & SCALE ANALYSIS REPORT
 **Generated:** Turkish Address Processing System Performance Analysis
-**Focus:** Batch processing readiness and TEKNOFEST compliance
+**Focus:** Batch processing readiness and Address Resolution System compliance
 
 ## 🎯 EXECUTIVE SUMMARY
 
 ### Performance Metrics
 - **Single Address Processing:** {single_perf['total_avg_ms']:.2f}ms average
-- **TEKNOFEST Compliance:** {'✅ PASS' if single_perf['total_avg_ms'] < 100 else '❌ FAIL'} (<100ms requirement)
+- **Address Resolution System Compliance:** {'✅ PASS' if single_perf['total_avg_ms'] < 100 else '❌ FAIL'} (<100ms requirement)
 - **Peak Throughput:** {max(r['throughput_per_sec'] for r in batch_perf['batch_results']):.1f} addresses/second
 - **Scalability Rating:** {batch_perf['scalability_analysis']['scalability_rating'].title()}
 - **Memory Efficiency:** {memory_analysis['memory_efficiency'].title()}
@@ -478,7 +478,7 @@ class PerformanceScaleAnalyzer:
 - **Total growth:** {memory_analysis['total_growth_mb']:.1f} MB
 - **Memory efficiency:** {memory_analysis['memory_efficiency'].title()}
 
-## 🏆 TEKNOFEST COMPETITION READINESS
+## 🏆 Address Resolution System COMPETITION READINESS
 
 ### Performance Requirements Check
 - **Speed requirement (<100ms):** {'✅ PASS' if single_perf['total_avg_ms'] < 100 else '❌ FAIL'}

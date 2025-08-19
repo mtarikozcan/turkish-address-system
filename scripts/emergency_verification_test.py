@@ -15,7 +15,7 @@ from address_parser import AddressParser
 def emergency_verification():
     """Verify the exact failing test cases"""
     
-    print("🚨 EMERGENCY VERIFICATION - TEKNOFEST Critical Failures")
+    print("🚨 EMERGENCY VERIFICATION - Address Resolution System Critical Failures")
     print("=" * 70)
     
     parser = AddressParser()

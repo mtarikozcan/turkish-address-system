@@ -1,8 +1,8 @@
 """
-TEKNOFEST 2025 Adres Çözümleme Sistemi - Address Validator Algorithm
+Address Resolution System - Address Validator Algorithm
 
 Algorithm 1: Address Validator
-Türkçe adreslerin hiyerarşik tutarlılığını kontrol etme algoritması
+Turkish address hierarchical consistency checking algorithm
 
 Purpose: Validate Turkish addresses for hierarchical consistency,
 postal code accuracy, and geographic coordinate validation.
@@ -36,7 +36,7 @@ class AddressValidator:
     Turkish Address Validator Algorithm
     
     Validates Turkish address hierarchical consistency, postal codes,
-    and geographic coordinates according to TEKNOFEST specifications.
+    and geographic coordinates according to system specifications.
     
     PERFORMANCE: Singleton pattern with cached data to avoid reloading 55,955 records
     """

@@ -1,12 +1,12 @@
 """
-TEKNOFEST 2025 Turkish Address Resolution System
+Turkish Address Resolution System
 Database Manager - PostGISManager Implementation
 
 Author: AI Assistant
 Date: 2025-01-XX
 Version: 1.0.0
 
-PRD Compliance: Complete implementation of PostGISManager with:
+Complete implementation of PostGISManager with:
 - PostgreSQL + PostGIS spatial database operations
 - Async operations using asyncpg for performance
 - Connection pooling for scalable deployment
@@ -737,7 +737,7 @@ class PostGISManager:
 async def main():
     """Demo usage of PostGISManager"""
     
-    print("🚀 TEKNOFEST PostGISManager Demo")
+    print("PostGISManager Demo")
     print("=" * 50)
     
     # Initialize manager

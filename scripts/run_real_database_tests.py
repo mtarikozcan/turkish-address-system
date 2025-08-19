@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TEKNOFEST 2025 Turkish Address Resolution System
+Address Resolution System Turkish Address Resolution System
 Real Database Integration Test Runner
 
 This script provides a simple way to run the comprehensive real database
@@ -217,7 +217,7 @@ class DatabaseTestRunner:
 async def main():
     """Main function"""
     parser = argparse.ArgumentParser(
-        description="Run TEKNOFEST 2025 Real Database Integration Tests"
+        description="Run Address Resolution System Real Database Integration Tests"
     )
     parser.add_argument(
         "--setup-docker",
@@ -266,7 +266,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    print("🧪 TEKNOFEST 2025 - Real Database Integration Test Runner")
+    print("🧪 Address Resolution System - Real Database Integration Test Runner")
     print("=" * 70)
     
     exit_code = asyncio.run(main())

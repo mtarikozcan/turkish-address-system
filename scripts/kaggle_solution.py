@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TEKNOFEST KAGGLE YARIŞMASI ÇÖZÜMÜ
+Address Resolution System KAGGLE YARIŞMASI ÇÖZÜMÜ
 Mevcut Turkish Address Processing System kullanarak adres eşleştirme
 """
 
@@ -18,11 +18,11 @@ src_dir = current_dir / "src"
 sys.path.insert(0, str(src_dir))
 
 class TeknoFestAddressSolution:
-    """TEKNOFEST Adres Çözümleme Yarışması Çözümü"""
+    """Address Resolution System Adres Çözümleme Yarışması Çözümü"""
     
     def __init__(self):
         """Mevcut modelleri yükle"""
-        print("🚀 TEKNOFEST ÇÖZÜMÜ BAŞLATILIYOR...")
+        print("🚀 Address Resolution System ÇÖZÜMÜ BAŞLATILIYOR...")
         
         # Mevcut Turkish Address Parser'ı yükle
         try:
@@ -343,7 +343,7 @@ class TeknoFestAddressSolution:
 
 def main():
     """Ana çözüm çalıştırıcı"""
-    print("🏆 TEKNOFEST ADRES ÇÖZÜMLEME YARIŞMASI")
+    print("🏆 Address Resolution System ADRES ÇÖZÜMLEME YARIŞMASI")
     print("=" * 70)
     print("Turkish Address Processing System ile Çözüm")
     

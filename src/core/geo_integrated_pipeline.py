@@ -1,12 +1,12 @@
 """
-TEKNOFEST 2025 Turkish Address Resolution System
+Turkish Address Resolution System
 GeoIntegratedPipeline - Complete 7-Step Address Processing Pipeline
 
 This module implements the main address processing pipeline that integrates
 all 4 core algorithms with database operations to provide complete address
 resolution with Turkish language specialization.
 
-Author: TEKNOFEST 2025 Address Resolution Team
+Author: Address Resolution Team
 Version: 1.0.0
 """
 
@@ -43,7 +43,7 @@ try:
 except ImportError:
     PostGISManager = None
 
-# Import TEKNOFEST 2025 compliance components
+# Import compliance components
 try:
     from duplicate_detector import DuplicateAddressDetector
 except ImportError:
@@ -97,7 +97,7 @@ class GeoIntegratedPipeline:
         self.matcher = HybridAddressMatcher() if HybridAddressMatcher else None
         self.db_manager = PostGISManager(db_connection_string) if PostGISManager else None
         
-        # Initialize TEKNOFEST 2025 compliance components
+        # Initialize compliance components
         self.duplicate_detector = DuplicateAddressDetector() if DuplicateAddressDetector else None
         self.geocoder = AddressGeocoder() if AddressGeocoder else None
         self.kaggle_formatter = KaggleSubmissionFormatter() if KaggleSubmissionFormatter else None
@@ -372,11 +372,11 @@ class GeoIntegratedPipeline:
         logger.info(f"Found {len(duplicate_groups)} duplicate groups")
         return duplicate_groups
     
-    # TEKNOFEST 2025 COMPLIANCE INTEGRATION METHODS
+    # COMPLIANCE INTEGRATION METHODS
     
     async def process_for_duplicate_detection(self, addresses: List[str]) -> Dict[str, Any]:
         """
-        TEKNOFEST REQUIREMENT: Process addresses and find duplicate groups
+        REQUIREMENT: Process addresses and find duplicate groups
         
         Args:
             addresses: List of address strings to process and detect duplicates
@@ -444,7 +444,7 @@ class GeoIntegratedPipeline:
     
     async def process_with_geocoding(self, addresses: List[str]) -> Dict[str, Any]:
         """
-        TEKNOFEST REQUIREMENT: Process addresses with enhanced geocoding
+        REQUIREMENT: Process addresses with enhanced geocoding
         
         Args:
             addresses: List of address strings to process and geocode
@@ -536,14 +536,14 @@ class GeoIntegratedPipeline:
     
     async def format_for_kaggle_submission(self, addresses: List[str]) -> Dict[str, Any]:
         """
-        TEKNOFEST REQUIREMENT: Process addresses and format for Kaggle competition
+        REQUIREMENT: Process addresses and format for competition
         
         Args:
             addresses: List of address strings to process and format
             
         Returns:
             {
-                "submission_dataframe": pandas.DataFrame,  # TEKNOFEST submission format
+                "submission_dataframe": pandas.DataFrame,  # submission format
                 "validation_result": Dict,                 # Format validation
                 "processing_summary": Dict                 # Processing metrics
             }
@@ -903,7 +903,7 @@ class PipelinePerformanceMonitor:
 if __name__ == "__main__":
     # Example usage and testing
     async def main():
-        print("🚀 TEKNOFEST GeoIntegratedPipeline - Demo")
+        print("GeoIntegratedPipeline - Demo")
         
         # Test with sample address
         test_address = "istanbul kadikoy moda mah caferaga sk 10"

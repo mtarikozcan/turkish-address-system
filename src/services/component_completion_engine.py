@@ -1,5 +1,5 @@
 """
-TEKNOFEST 2025 - Component Completion Intelligence Engine
+Component Completion Intelligence Engine
 Phase 5: Bidirectional Hierarchy Completion
 
 This module provides intelligent component completion for missing hierarchy levels:
@@ -23,7 +23,7 @@ from difflib import SequenceMatcher
 
 class ComponentCompletionEngine:
     """
-    TEKNOFEST Component Completion Intelligence Engine
+    Component Completion Intelligence Engine
     
     Provides intelligent hierarchy completion:
     - mahalle → ilçe → il (DOWN completion)
@@ -656,7 +656,7 @@ def test_component_completion_engine():
     
     # Display statistics
     stats = completion_engine.get_statistics()
-    print(f"\n📊 Performance Statistics:")
+    print(f"\nPerformance Statistics:")
     print(f"   Total queries: {stats['total_queries']}")
     print(f"   Successful completions: {stats['successful_completions']}")
     print(f"   Success rate: {stats['success_rate']:.1%}")
@@ -670,7 +670,7 @@ def test_component_completion_engine():
     success_rate = (passed_tests / total_tests * 100) if total_tests > 0 else 0
     
     print(f"\n" + "=" * 70)
-    print(f"📊 PHASE 5 TEST SUMMARY:")
+    print(f"PHASE 5 TEST SUMMARY:")
     print(f"   Total tests: {total_tests}")
     print(f"   Passed: {passed_tests}")
     print(f"   Failed: {failed_tests}")

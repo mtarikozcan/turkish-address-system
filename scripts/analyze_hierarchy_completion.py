@@ -162,7 +162,7 @@ def main():
         print(f"   • System has gaps in hierarchy completion")
         print(f"   • Database contains the needed information")
         print(f"   • DOWN completion is technically feasible")
-        print(f"   • This will significantly improve TEKNOFEST competitiveness")
+        print(f"   • This will significantly improve Address Resolution System competitiveness")
     
     print("=" * 60)
 
